@@ -204,7 +204,8 @@
     /* Compteur global : badge SVG externe sans script de suivi. */
     .visit-counter {display:flex;align-items:center;gap:10px 12px;flex-wrap:wrap;width:fit-content;max-width:100%;margin-top:18px;padding:10px 13px;background:rgba(255,255,255,.86);border:1px solid #d9d6ed;border-radius:14px;box-shadow:0 6px 18px rgba(65,53,125,.07);}
     .visit-counter-icon {display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border-radius:9px;background:#ece7ff;color:#5f479f;font-weight:850;}
-    .visit-counter img {display:block;width:auto;height:20px;min-width:64px;max-width:160px;}
+    .visit-counter-count {display:inline-flex;align-items:center;gap:7px;padding:5px 12px;border-radius:9px;background:#303157;color:#fff;font-size:.95rem;font-weight:700;line-height:1.4;}
+    .visit-counter-count strong {font-size:1.3rem;min-width:2ch;font-variant-numeric:tabular-nums;color:#ffdc93;}
     .visit-counter-caption {font-size:.75rem;line-height:1.35;color:#65627c;max-width:235px;}
     @media (max-width:640px) {.visit-counter {gap:9px;}.visit-counter-caption{flex-basis:100%;max-width:none;}}
     @media (max-width:890px) {.hero-grid{grid-template-columns:1fr;gap:30px}.visual-card{display:none}.module{grid-template-columns:1fr}.routes{gap:10px}.route{padding:19px;min-height:185px}}
@@ -232,8 +233,8 @@
       <p class="hero-note">10 minutes pour commencer · Sans note, sans compte, sans pression.</p>
       <div class="visit-counter" aria-label="Compteur de visites du site">
         <span class="visit-counter-icon" aria-hidden="true">↗</span>
-        <img src="https://hits.sh/hectorb-max.github.io/atelier-second-degre-1re.svg?label=Visites&amp;color=6851b5&amp;labelColor=303157&amp;style=flat-square" alt="Nombre de visites enregistrées depuis l’installation du compteur" height="20" loading="eager" decoding="async" referrerpolicy="no-referrer">
-        <span class="visit-counter-caption">Affichages de la page, pas visiteurs uniques.</span>
+        <span class="visit-counter-count">Visites <strong id="visit-count">…</strong></span>
+        <span class="visit-counter-caption" id="visit-caption">Une visite par session depuis le 29 octobre 2026.</span>
       </div>
     </div>
     <div class="visual-card" aria-hidden="true">
@@ -365,6 +366,32 @@
 <script>
 (() => {
   'use strict';
+  // Compteur textuel : une requête par session, sans badge image pouvant être masqué.
+  const visitNumber = document.getElementById('visit-count');
+  const visitCaption = document.getElementById('visit-caption');
+  const counterBase = 'https://abacus.jasoncameron.dev/';
+  const counterPath = 'hectorb-max-github-io/atelier-second-degre-1re';
+  const sessionKey = 'atelier-second-degre-counter-session-v2';
+  let alreadyCounted = false;
+  try { alreadyCounted = sessionStorage.getItem(sessionKey) === '1'; } catch {}
+  const endpoint = counterBase + (alreadyCounted ? 'get/' : 'hit/') + counterPath;
+  fetch(endpoint, {mode:'cors', cache:'no-store', referrerPolicy:'no-referrer'})
+    .then(response => {
+      if (!response.ok) throw new Error('Service indisponible');
+      return response.json();
+    })
+    .then(data => {
+      const number = Number(data.value);
+      if (!Number.isFinite(number) || number < 0) throw new Error('Réponse invalide');
+      visitNumber.textContent = new Intl.NumberFormat('fr-FR').format(number);
+      if (!alreadyCounted) {
+        try { sessionStorage.setItem(sessionKey, '1'); } catch {}
+      }
+    })
+    .catch(() => {
+      visitNumber.textContent = '—';
+      visitCaption.textContent = 'Compteur momentanément indisponible.';
+    });
   const STORAGE = 'atelier-second-degre-1re-v1';
   const correct = { racines: 'a', canonique: 'b', signe: 'a' };
   const responses = {
