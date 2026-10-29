@@ -318,17 +318,18 @@
   <section id="choisir" aria-labelledby="choose-heading">
     <div class="section-top"><div><p class="eyebrow">À toi de choisir</p><h2 id="choose-heading">Qu'est-ce qui te bloque ?</h2><p class="section-desc">Il n'y a pas d'ordre imposé. Chaque atelier contient un rappel, un exemple et une courte question d'entraînement.</p></div><div class="progress-pill" id="progress-pill" aria-live="polite">0 / 7 questions débloquées</div></div>
     <nav class="routes" aria-label="Choisir un atelier">
-      <a class="route" href="#racines"><span class="route-icon" aria-hidden="true">01</span><strong>Trouver des racines</strong><span>Comprendre ce que signifie « résoudre P(x) = 0 ».</span></a>
+      <a class="route" href="#racines"><span class="route-icon" aria-hidden="true">01</span><strong>Trouver des racines</strong><span>Trouver quand P(x) vaut 0.</span></a>
       <a class="route" href="#canonique"><span class="route-icon" aria-hidden="true">02</span><strong>Comprendre la forme canonique</strong><span>Voir le sommet et comprendre les variations de la parabole.</span></a>
       <a class="route" href="#signe"><span class="route-icon" aria-hidden="true">03</span><strong>Étudier un signe</strong><span>Choisir les bons intervalles et les bonnes bornes.</span></a>
     </nav>
   </section>
 
+  <div class="chapter-intro" id="chap-racines"><div class="chapter-index">ATELIER 01</div><h2>Trouver les racines</h2><p>D'abord un produit nul. Mais que faire lorsque la factorisation ne saute pas aux yeux ?</p></div>
   <section class="module" id="racines" aria-labelledby="r-title">
     <article class="panel">
       <p class="module-label"><span class="number">01</span> Comprendre</p>
       <h3 id="r-title">Une racine, c'est quoi ?</h3>
-      <p>Une <strong>racine</strong> du polynôme <span class="math">P</span> est un nombre <span class="math">r</span> tel que <span class="math">P(r) = 0</span>. C'est aussi l'abscisse d'un point où sa courbe coupe ou touche l'axe horizontal.</p>
+      <p>Une <strong>racine réelle</strong> du polynôme <span class="math">P</span> est un nombre réel <span class="math">r</span> tel que <span class="math">P(r) = 0</span>. Commençons par un cas agréable : le polynôme est déjà écrit sous une forme factorisée.</p>
       <div class="formula-block" aria-label="P de x égale 2 x carré moins 8 x égale 2 x fois x moins 4">P(x) = 2x² − 8x = 2x(x − 4)</div>
       <p class="muted">Exemple adapté de ta fiche d'entraînement de Première.</p>
       <ol class="steps">
@@ -336,6 +337,7 @@
         <li>Un produit est nul si, et seulement si, <strong>au moins un de ses facteurs est nul</strong>.</li>
         <li>Donc <span class="math">2x = 0</span> ou <span class="math">x − 4 = 0</span>. Les racines sont <strong>0 et 4</strong>.</li>
       </ol>
+      <p class="root-geometry"><strong>Et sur la courbe ?</strong> Pour cet exemple, les racines 0 et 4 sont les abscisses des points <span class="math">(0 ; 0)</span> et <span class="math">(4 ; 0)</span> où la parabole rencontre l'axe des abscisses.</p>
       <div class="example"><strong>À retenir</strong><p>Pour résoudre une équation produit nul, on annule séparément les facteurs. On ne divise pas par <span class="math">x</span> sans vérifier qu'il est non nul : on risquerait de perdre la racine 0.</p></div>
     </article>
     <div class="panel right-panel">
@@ -352,6 +354,18 @@
     </div>
   </section>
 
+  <section class="deep-dive" id="discriminant" aria-labelledby="discriminant-title">
+    <div class="deep-heading"><p class="eyebrow">01 · Comprendre, deuxième regard</p><h3 id="discriminant-title">Et si je ne vois aucune factorisation ?</h3><p>Avec <span class="math">P(x)=ax²+bx+c</span> (<span class="math">a ≠ 0</span>), on peut toujours <strong>calculer le discriminant</strong>. Il permet de savoir combien il existe de racines réelles, puis de les calculer lorsqu'elles existent. Cette méthode ne dépend pas d’une factorisation « devinée ».</p></div>
+    <div class="formula-block">Δ = b² − 4ac</div>
+    <div class="root-grid">
+      <article class="root-case"><span class="case-tag">Δ &gt; 0</span><h4>Deux racines distinctes</h4><p>Le polynôme s'annule deux fois :</p><p class="math centered">x₁ = (−b − √Δ)/(2a) ; x₂ = (−b + √Δ)/(2a)</p><p><strong>Exemple :</strong> <span class="math">x² − 5x + 6</span> : <span class="math">Δ = 1</span>, racines <span class="math">2</span> et <span class="math">3</span>.</p></article>
+      <article class="root-case"><span class="case-tag">Δ = 0</span><h4>Une racine double</h4><p>La parabole touche l'axe horizontal en un point :</p><p class="math centered">x₀ = −b/(2a)</p><p><strong>Exemple :</strong> <span class="math">x² + 2x + 1</span> : <span class="math">Δ = 0</span>, racine double <span class="math">−1</span>.</p></article>
+      <article class="root-case"><span class="case-tag">Δ &lt; 0</span><h4>Aucune racine réelle</h4><p>La parabole ne rencontre pas l'axe horizontal : l'équation <span class="math">P(x) = 0</span> n'a pas de solution dans ℝ.</p><p><strong>Exemple :</strong> <span class="math">x² + 2x + 5</span> : <span class="math">Δ = −16</span>, aucune racine réelle.</p></article>
+    </div>
+    <p class="keyline"><strong>À retenir :</strong> le discriminant sert d'abord à <strong>chercher les racines</strong> ; nous le retrouverons ensuite pour étudier le signe du trinôme.</p>
+  </section>
+
+  <div class="chapter-intro" id="chap-canonique"><div class="chapter-index">ATELIER 02</div><h2>Comprendre la forme canonique</h2><p>Pourquoi écrire un carré ? Pour lire le sommet, l’extremum et les variations presque d’un seul coup d’œil.</p></div>
   <section class="module" id="canonique" aria-labelledby="c-title">
     <article class="panel">
       <p class="module-label"><span class="number">02</span> Comprendre</p>
@@ -374,6 +388,7 @@
         <p><strong>Donc</strong> <span class="math">P</span> est strictement décroissante sur <span class="math">]−∞ ; 3]</span>, puis strictement croissante sur <span class="math">[3 ; +∞[</span>.</p>
         <p class="variation-general"><strong>Et si le coefficient <span class="math">a</span> est négatif ?</strong> Pour <span class="math">a(x − α)² + β</span>, si <span class="math">a &gt; 0</span>, la fonction décroît puis croît : elle admet un minimum. Si <span class="math">a &lt; 0</span>, c'est l'inverse : elle croît puis décroît et admet un maximum. Dans les deux cas, le changement a lieu en <span class="math">x = α</span>.</p>
       </div>
+      <div class="negative-example"><strong>Et si le carré était multiplié par un nombre négatif ?</strong><p>Pour <span class="math">Q(x) = −2(x + 1)² + 5</span>, le carré est positif ou nul, mais <span class="math">−2(x + 1)² ≤ 0</span>. Ainsi <span class="math">Q(x) ≤ 5</span> : la fonction admet un <strong>maximum égal à 5</strong>, atteint pour <span class="math">x = −1</span>. Elle <strong>croît</strong> sur <span class="math">]−∞ ; −1]</span>, puis <strong>décroît</strong> sur <span class="math">[−1 ; +∞[</span>.</p><p>Un même sommet, deux sens possibles : ce n’est pas le carré qui change, c’est le signe de <span class="math">a</span>.</p></div>
       <div class="graph-container">
         <div class="graph-switch">
           <span>Change le signe de <span class="math">a</span> :</span>
@@ -411,7 +426,7 @@
     <p class="section-desc">Observe le signe de <span class="math">a</span>, l’abscisse du sommet et la distance à ce sommet. Sans note, avec une explication à chaque réponse.</p>
     <div class="variation-quiz-grid">
       <article class="variation-question">
-        <p class="question-kicker">Question 1 · a positif</p><h3>Où change le sens ?</h3>
+        <p class="question-kicker">Question 1 · <i class="math math-lower">a</i> positif</p><h3>Où change le sens ?</h3>
         <p>Soit <span class="math">f(x) = (x − 4)² − 2</span>. Que peut-on affirmer ?</p>
         <div class="answers" role="group" data-single="var1" aria-label="Variations de f">
           <button class="choice" type="button" data-option="a" aria-pressed="false"><span class="letter">A</span><span>Décroît jusqu’à 4, puis croît.</span></button>
@@ -420,7 +435,7 @@
         </div><div class="feedback" id="feedback-var1" role="status" aria-live="polite"></div>
       </article>
       <article class="variation-question">
-        <p class="question-kicker">Question 2 · a négatif</p><h3>La parabole se retourne</h3>
+        <p class="question-kicker">Question 2 · <i class="math math-lower">a</i> négatif</p><h3>La parabole se retourne</h3>
         <p>Soit <span class="math">g(x) = −2(x + 1)² + 5</span>. Que peut-on affirmer ?</p>
         <div class="answers" role="group" data-single="var2" aria-label="Variations de g">
           <button class="choice" type="button" data-option="a" aria-pressed="false"><span class="letter">A</span><span>Décroît jusqu’à −1, puis croît.</span></button>
@@ -440,6 +455,7 @@
     </div>
   </section>
 
+  <div class="chapter-intro" id="chap-signe"><div class="chapter-index">ATELIER 03</div><h2>Étudier le signe d’un trinôme</h2><p>Les racines nous disent où le polynôme s’annule. Et entre ces valeurs, quel est son signe ?</p></div>
   <section class="module" id="signe" aria-labelledby="s-title">
     <article class="panel">
       <p class="module-label"><span class="number">03</span> Comprendre</p>
