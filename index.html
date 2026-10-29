@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Un atelier de remédiation en mathématiques pour la Première spécialité : racines, forme canonique et signe d'un trinôme, avec exemples guidés et exercices corrigés.">
+  <meta name="theme-color" content="#f7f6f2">
+  <title>Le second degré, pas à pas — Première spécialité</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg:#f7f6f2; --paper:#fffefa; --ink:#18232b; --muted:#5b6970; --line:#e1e6e3;
+      --forest:#155b50; --forest-soft:#e5f2ed; --teal:#1b7163;
+      --gold:#d18f42; --gold-light:#fff1df; --red:#9e423a; --red-light:#fff1ec;
+      --shadow:0 18px 55px rgba(15,38,41,.075);
+      --radius:20px;
+      font-synthesis:none;
+    }
+    * { box-sizing:border-box; }
+    html {scroll-behavior:smooth; scroll-padding-top:90px;}
+    body {margin:0; background:var(--bg); color:var(--ink); font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;}
+    button, input {font:inherit;}
+    button {cursor:pointer;}
+    a {color:var(--forest); text-underline-offset:3px;}
+    a:hover {color:#0b4037;}
+    :focus-visible {outline:3px solid #e6a64b; outline-offset:3px;}
+    .skip {position:absolute;top:-70px;left:12px;z-index:10;padding:8px 16px;background:white;}
+    .skip:focus {top:10px;}
+    .container {width:min(1110px,calc(100% - 44px)); margin:0 auto;}
+    .site-top {border-bottom:1px solid var(--line);background:rgba(255,254,250,.96);position:sticky;top:0;z-index:4;backdrop-filter:blur(12px);}
+    .bar {display:flex;align-items:center;justify-content:space-between;gap:15px;min-height:73px;}
+    .brand {font-weight:780;letter-spacing:-.035em;color:var(--ink);text-decoration:none;font-size:1.08rem;white-space:nowrap;}
+    .brand-mark {display:inline-grid;place-items:center;background:var(--forest);color:white;border-radius:11px;width:36px;height:36px;margin-right:9px;font-size:1.1rem;}
+    .meta {color:var(--muted);font-size:.84rem;}
+    .top-link {background:var(--forest-soft);color:var(--forest);text-decoration:none;border-radius:999px;padding:8px 15px;font-size:.88rem;font-weight:700;white-space:nowrap;}
+    .hero {position:relative;padding:75px 0 66px;overflow:hidden;border-bottom:1px solid var(--line);background:radial-gradient(ellipse 580px 330px at 83% 15%,#e1eee6 4%,transparent 75%),linear-gradient(155deg,#f9f8f4 8%,#f2f6f1 100%);}
+    .hero-grid {display:grid;grid-template-columns:1.28fr .72fr;gap:55px;align-items:center;}
+    .eyebrow {text-transform:uppercase;color:var(--forest);letter-spacing:.18em;font-weight:850;font-size:.73rem;margin:0 0 16px;}
+    h1 {font-size:clamp(2.6rem,5.8vw,5.1rem);letter-spacing:-.068em;line-height:1.08;margin:0 0 23px;max-width:730px;font-weight:800;}
+    h1 em {font-style:normal;color:var(--forest);}
+    .lead {color:#4a5c60;font-size:1.13rem;line-height:1.75;max-width:600px;margin:0 0 27px;}
+    .button {display:inline-flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;border:0;border-radius:12px;padding:12px 19px;font-weight:750;line-height:1.35;}
+    .button-primary {background:var(--forest);color:#fff;box-shadow:0 9px 18px rgba(21,91,80,.16);}
+    .button-primary:hover {background:#0e463d;color:white;}
+    .button-secondary {background:var(--forest-soft);color:var(--forest);}
+    .button-secondary:hover {background:#d1e7de;color:var(--forest);}
+    .hero-actions {display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+    .hero-note {font-size:.89rem;color:var(--muted);margin:18px 0 0;}
+    .visual-card {border:1px solid rgba(31,97,80,.18);box-shadow:var(--shadow);padding:22px;border-radius:24px;background:rgba(255,255,252,.87);transform:rotate(2deg);}
+    .visual-card .top {display:flex;justify-content:space-between;color:var(--muted);font-weight:700;font-size:.77rem;letter-spacing:.08em;text-transform:uppercase;}
+    .visual-card .formula {font-family:Georgia,"Times New Roman",serif;letter-spacing:-.035em;text-align:center;font-size:clamp(1.5rem,3vw,2rem);padding:42px 0 35px;white-space:nowrap;}
+    .line-visual {height:10px;border-radius:10px;background:#e4eee9;margin:0 0 12px;}
+    .line-visual:nth-of-type(3) {width:75%;background:#f5e3c9;}
+    .marker {display:flex;align-items:center;gap:8px;color:#2b6a5d;font-size:.85rem;font-weight:700;}
+    .marker i {display:inline-grid;place-items:center;width:25px;height:25px;border-radius:50%;background:#d4e7db;font-style:normal;}
+    main {padding:57px 0 70px;}
+    .section-top {display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:24px;}
+    h2 {font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.2;letter-spacing:-.045em;margin:0 0 10px;}
+    h3 {letter-spacing:-.032em;line-height:1.25;margin:0 0 10px;font-size:1.43rem;}
+    p {margin-top:0;}
+    .section-desc {color:var(--muted);max-width:650px;margin:0;}
+    .progress-pill {background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:10px 16px;color:var(--forest);font-size:.82rem;font-weight:780;white-space:nowrap;}
+    .routes {display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:63px;}
+    .route {position:relative;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);box-shadow:0 5px 18px rgba(35,59,58,.035);border-radius:18px;padding:23px 23px 21px;min-height:200px;transition:transform .18s,box-shadow .18s,border-color .18s;}
+    .route:hover {transform:translateY(-3px);box-shadow:var(--shadow);border-color:#c1d7cc;color:var(--ink);}
+    .route-icon {display:inline-grid;place-items:center;width:41px;height:41px;border-radius:12px;background:#e6f0ec;color:var(--forest);font-weight:800;margin-bottom:19px;}
+    .route:nth-child(2) .route-icon {background:#f7ebd8;color:#9d6b23;}
+    .route:nth-child(3) .route-icon {background:#ebeaf5;color:#615b9e;}
+    .route strong {display:block;font-size:1.1rem;letter-spacing:-.02em;margin-bottom:5px;}
+    .route span:last-child {display:block;color:var(--muted);font-size:.91rem;line-height:1.55;}
+    .module {display:grid;grid-template-columns:.91fr 1.09fr;gap:20px;align-items:start;margin-bottom:46px;scroll-margin-top:103px;}
+    .panel {background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 5px 24px rgba(21,41,40,.025);padding:30px;}
+    .module-label {display:inline-flex;align-items:center;gap:9px;font-weight:810;text-transform:uppercase;letter-spacing:.15em;color:var(--forest);font-size:.73rem;margin:0 0 20px;}
+    .module-label .number {border-radius:8px;padding:4px 8px;background:var(--forest-soft);letter-spacing:0;font-size:.85rem;}
+    .muted {color:var(--muted);}
+    .math {font-family:Cambria,"Cambria Math",STIXGeneral,Georgia,"Times New Roman",serif;letter-spacing:.007em;}
+    .formula-block {font:normal clamp(1.27rem,2vw,1.65rem)/1.45 Cambria,"Cambria Math",Georgia,serif;text-align:center;background:#f1f6f2;border-radius:13px;padding:19px 10px;margin:21px 0;overflow-x:auto;white-space:nowrap;}
+    .keyline {border-left:3px solid var(--forest);padding:9px 0 9px 14px;margin:21px 0;color:#31454b;}
+    .steps {counter-reset:step;list-style:none;margin:22px 0 0;padding:0;}
+    .steps li {counter-increment:step;position:relative;margin:0 0 13px;padding:2px 0 2px 37px;}
+    .steps li:before {content:counter(step);position:absolute;left:0;top:4px;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#dbece3;color:#175b4c;font-weight:850;font-size:.75rem;}
+    .steps li:last-child {margin-bottom:0;}
+    .example {background:#f5f7f3;border:1px solid #e3eae4;border-radius:14px;padding:18px 20px;margin-top:23px;}
+    .example strong {color:#1a5f52;}
+    .example p {margin:7px 0 0;}
+    .right-panel {border-top:4px solid #d8e9e0;}
+    .right-panel h3 {margin-bottom:10px;}
+    .question-kicker {text-transform:uppercase;letter-spacing:.12em;font-size:.73rem;font-weight:850;color:#6f7e78;margin:0 0 10px;}
+    .question-statement {font-size:1.06rem;margin:0 0 20px;}
+    .answers {display:grid;gap:10px;}
+    .choice {border:1px solid #dce4df;background:white;border-radius:12px;padding:14px 16px;text-align:left;display:flex;align-items:center;gap:12px;min-height:56px;color:var(--ink);transition:background .16s,border-color .16s;}
+    .choice:hover {background:#f7faf8;border-color:#a7c5b7;}
+    .choice .letter {width:28px;height:28px;flex:0 0 28px;display:grid;place-items:center;border-radius:8px;background:#eff3f0;color:#4a6860;font-size:.77rem;font-weight:850;}
+    .choice[aria-pressed="true"] {border-color:var(--forest);background:var(--forest-soft);}
+    .choice.is-correct {border-color:#2a8a62;background:#e9f7ee;}
+    .choice.is-wrong {border-color:#cf897b;background:#fff0ec;}
+    .feedback {display:none;border-radius:12px;padding:14px 15px;margin-top:15px;font-size:.94rem;}
+    .feedback.visible {display:block;}
+    .feedback.success {background:#e6f4ea;border:1px solid #b5d8bf;color:#1c5736;}
+    .feedback.error {background:#fff0eb;border:1px solid #edcfc7;color:#713c34;}
+    .feedback.neutral {background:#eff3f5;border:1px solid #dde6e8;color:#405a60;}
+    .feedback strong {display:block;margin-bottom:3px;}
+    .hint {border-top:1px solid var(--line);padding-top:17px;margin-top:21px;font-size:.92rem;}
+    .hint summary {color:var(--forest);font-weight:750;cursor:pointer;}
+    .hint p {margin:11px 0 0;color:#536665;}
+    .graph-container {border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,#fff,#fafcf9);padding:10px;margin-top:19px;}
+    #parabola {width:100%;height:auto;display:block;}
+    .graph-controls {padding:8px 14px 15px;}
+    .graph-controls label {font-weight:700;font-size:.92rem;display:flex;justify-content:space-between;gap:10px;}
+    .graph-controls input {width:100%;margin-top:13px;accent-color:var(--forest);}
+    .graph-readout {background:var(--forest-soft);border-radius:10px;color:#235b50;font-size:.89rem;margin-top:12px;padding:10px 13px;}
+    .multi-list {border:0;margin:0;padding:0;}
+    .multi-list legend {font-weight:760;margin-bottom:12px;}
+    .check-option {display:flex;align-items:flex-start;gap:12px;cursor:pointer;background:white;border:1px solid var(--line);border-radius:12px;padding:13px 14px;margin:0 0 9px;}
+    .check-option:has(input:checked) {border-color:#87bba7;background:#eff8f2;}
+    .check-option input {accent-color:var(--forest);width:20px;height:20px;flex:0 0 20px;margin:3px 0 0;}
+    .multi-check-actions {margin-top:15px;}
+    .takeaway {margin:42px 0;background:#163e39;color:#e8f6ed;border-radius:22px;padding:32px 36px;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;}
+    .takeaway h2 {color:white;margin:0 0 10px;}
+    .takeaway p {color:#c6dcd4;margin-bottom:0;}
+    .takeaway .note {background:rgba(255,255,255,.095);border:1px solid rgba(255,255,255,.17);border-radius:16px;padding:24px;}
+    .takeaway .note strong {display:block;color:white;margin-bottom:7px;}
+    .closing {display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+    .small-card {border:1px solid var(--line);background:var(--paper);border-radius:17px;padding:22px 25px;}
+    .small-card h3 {font-size:1.12rem;}
+    .small-card p:last-child {margin-bottom:0;}
+    .small-card ul {margin:8px 0 0;padding-left:20px;}
+    footer {border-top:1px solid var(--line);padding:25px 0 40px;color:var(--muted);font-size:.88rem;}
+    .footer-grid {display:flex;justify-content:space-between;gap:17px;flex-wrap:wrap;}
+    .reset {background:transparent;border:0;color:#47685f;text-decoration:underline;text-underline-offset:3px;padding:0;}
+    @media (max-width:890px) {.hero-grid{grid-template-columns:1fr;gap:30px}.visual-card{display:none}.module{grid-template-columns:1fr}.routes{gap:10px}.route{padding:19px;min-height:185px}}
+    @media (max-width:640px) {.container{width:min(100% - 30px,1110px)}.hero{padding:50px 0}.bar{min-height:62px}.brand{font-size:.99rem}.brand-mark{width:30px;height:30px}.meta{display:none}.top-link{padding:7px 11px;font-size:.79rem}.routes,.closing,.takeaway{grid-template-columns:1fr}.route{min-height:unset}.section-top{align-items:start;flex-direction:column}.panel{padding:22px}.takeaway{padding:26px 22px}.formula-block{font-size:1.16rem}.hero-actions .button{width:100%}}
+    @media (prefers-reduced-motion:reduce) {html{scroll-behavior:auto}.route{transition:none}}
+    @media print {.site-top,.hero-actions,.choice,.hint,.reset,#progress-pill{display:none}.hero{padding:18px 0}.module{break-inside:avoid;grid-template-columns:1fr 1fr}.route,.panel{box-shadow:none}body{background:#fff}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-top">
+  <div class="container bar">
+    <a class="brand" href="#accueil"><span class="brand-mark" aria-hidden="true">x²</span>Maths · Pas à pas</a>
+    <span class="meta">Première spécialité · Second degré</span>
+    <a class="top-link" href="#choisir">Choisir une difficulté ↗</a>
+  </div>
+</header>
+<section id="accueil" class="hero" aria-labelledby="title">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">Atelier 01 · Maths première spécialité</p>
+      <h1>Le second degré,<br><em>sans se perdre.</em></h1>
+      <p class="lead">Une formule te bloque ? Tu confonds racine, sommet et signe ? Choisis le point qui coince, regarde un exemple, puis essaie à ton rythme.</p>
+      <div class="hero-actions"><a class="button button-primary" href="#choisir">Je choisis ma difficulté <span aria-hidden="true">→</span></a><a class="button button-secondary" href="#methode">Voir la méthode</a></div>
+      <p class="hero-note">10 minutes pour commencer · Sans note, sans compte, sans pression.</p>
+    </div>
+    <div class="visual-card" aria-hidden="true">
+      <div class="top"><span>Dans le carnet de maths</span><span>01 / 03</span></div>
+      <div class="formula">x² − 6x + 10<br>= (x − 3)² + 1</div>
+      <div class="line-visual"></div><div class="line-visual"></div>
+      <p class="marker"><i>✓</i> Déjà plus clair.</p>
+    </div>
+  </div>
+</section>
+<main id="contenu" class="container">
+  <section id="choisir" aria-labelledby="choose-heading">
+    <div class="section-top"><div><p class="eyebrow">À toi de choisir</p><h2 id="choose-heading">Qu'est-ce qui te bloque ?</h2><p class="section-desc">Il n'y a pas d'ordre imposé. Chaque atelier contient un rappel, un exemple et une courte question d'entraînement.</p></div><div class="progress-pill" id="progress-pill" aria-live="polite">0 / 4 questions débloquées</div></div>
+    <nav class="routes" aria-label="Choisir un atelier">
+      <a class="route" href="#racines"><span class="route-icon" aria-hidden="true">01</span><strong>Trouver des racines</strong><span>Comprendre ce que signifie « résoudre P(x) = 0 ».</span></a>
+      <a class="route" href="#canonique"><span class="route-icon" aria-hidden="true">02</span><strong>Comprendre la forme canonique</strong><span>Voir le sommet et expliquer le minimum ou le maximum.</span></a>
+      <a class="route" href="#signe"><span class="route-icon" aria-hidden="true">03</span><strong>Étudier un signe</strong><span>Choisir les bons intervalles et les bonnes bornes.</span></a>
+    </nav>
+  </section>
+
+  <section class="module" id="racines" aria-labelledby="r-title">
+    <article class="panel">
+      <p class="module-label"><span class="number">01</span> Comprendre</p>
+      <h3 id="r-title">Une racine, c'est quoi ?</h3>
+      <p>Une <strong>racine</strong> du polynôme <span class="math">P</span> est un nombre <span class="math">r</span> tel que <span class="math">P(r) = 0</span>. C'est aussi l'abscisse d'un point où sa courbe coupe ou touche l'axe horizontal.</p>
+      <div class="formula-block" aria-label="P de x égale 2 x carré moins 8 x égale 2 x fois x moins 4">P(x) = 2x² − 8x = 2x(x − 4)</div>
+      <p class="muted">Exemple adapté de ta fiche d'entraînement de Première.</p>
+      <ol class="steps">
+        <li>On cherche les valeurs de <span class="math">x</span> qui rendent <span class="math">P(x)</span> nul.</li>
+        <li>Un produit est nul si, et seulement si, <strong>au moins un de ses facteurs est nul</strong>.</li>
+        <li>Donc <span class="math">2x = 0</span> ou <span class="math">x − 4 = 0</span>. Les racines sont <strong>0 et 4</strong>.</li>
+      </ol>
+      <div class="example"><strong>À retenir</strong><p>Pour résoudre une équation produit nul, on annule séparément les facteurs. On ne divise pas par <span class="math">x</span> sans vérifier qu'il est non nul : on risquerait de perdre la racine 0.</p></div>
+    </article>
+    <div class="panel right-panel">
+      <p class="question-kicker">À ton tour · 1 question</p>
+      <h3>Reconnais les racines</h3>
+      <p class="question-statement">Quelles sont les racines de <span class="math">P(x) = x² − 9x + 20</span> ?</p>
+      <div class="answers" role="group" aria-label="Choisis une réponse à la question sur les racines" data-single="racines">
+        <button type="button" class="choice" aria-pressed="false" data-option="a"><span class="letter">A</span><span>4 et 5</span></button>
+        <button type="button" class="choice" aria-pressed="false" data-option="b"><span class="letter">B</span><span>−4 et −5</span></button>
+        <button type="button" class="choice" aria-pressed="false" data-option="c"><span class="letter">C</span><span>2 et 10</span></button>
+      </div>
+      <div id="feedback-racines" class="feedback" role="status" aria-live="polite"></div>
+      <details class="hint"><summary>Besoin d'un indice ?</summary><p>Cherche deux nombres dont la <strong>somme vaut 9</strong> et le <strong>produit vaut 20</strong>, ou vérifie par calcul les valeurs proposées.</p></details>
+    </div>
+  </section>
+
+  <section class="module" id="canonique" aria-labelledby="c-title">
+    <article class="panel">
+      <p class="module-label"><span class="number">02</span> Comprendre</p>
+      <h3 id="c-title">Pourquoi écrire un carré ?</h3>
+      <p>La <strong>forme canonique</strong> fait apparaître le sommet de la parabole. Pour <span class="math">P(x) = a(x − α)² + β</span>, ce sommet est <span class="math">S(α ; β)</span>.</p>
+      <div class="formula-block">P(x) = x² − 6x + 10 = (x − 3)² + 1</div>
+      <ol class="steps">
+        <li><span class="math">(x − 3)²</span> est toujours <strong>positif ou nul</strong>.</li>
+        <li>Il est nul exactement lorsque <span class="math">x = 3</span>.</li>
+        <li>Ainsi, <span class="math">P</span> admet le <strong>minimum 1</strong>, atteint pour <span class="math">x = 3</span>. Elle n'a aucune racine réelle.</li>
+      </ol>
+      <div class="graph-container">
+        <svg id="parabola" viewBox="0 0 610 300" role="img" aria-label="Parabole y égale x moins 3 au carré plus 1, dont le sommet est en 3 et 1. Déplace le curseur pour explorer une valeur de la fonction.">
+          <text x="20" y="32" fill="#52665e" font-size="15">Visualisation de P(x) = (x − 3)² + 1</text>
+          <text x="20" y="58" fill="#52665e" font-size="13">La courbe reste au-dessus de l'axe horizontal.</text>
+          <g id="graph-elements"></g>
+        </svg>
+        <div class="graph-controls"><label for="x-slider"><span>Déplace le point sur la parabole</span><output id="x-value" for="x-slider">x = 3</output></label><input id="x-slider" type="range" min="-1" max="7" value="3" step="0.25"><div class="graph-readout" id="graph-readout" aria-live="polite">Pour x = 3, P(x) = 1 : c'est le minimum.</div></div>
+      </div>
+    </article>
+    <div class="panel right-panel">
+      <p class="question-kicker">À ton tour · 1 question</p>
+      <h3>Choisis la bonne forme</h3>
+      <p class="question-statement">Quelle est la forme canonique de <span class="math">Q(x) = 2x² + 8x + 3</span> ?</p>
+      <div class="answers" role="group" aria-label="Choisis une forme canonique" data-single="canonique">
+        <button type="button" class="choice" aria-pressed="false" data-option="a"><span class="letter">A</span><span class="math">2(x − 2)² − 5</span></button>
+        <button type="button" class="choice" aria-pressed="false" data-option="b"><span class="letter">B</span><span class="math">2(x + 2)² − 5</span></button>
+        <button type="button" class="choice" aria-pressed="false" data-option="c"><span class="letter">C</span><span class="math">2(x + 2)² + 5</span></button>
+      </div>
+      <div id="feedback-canonique" class="feedback" role="status" aria-live="polite"></div>
+      <details class="hint"><summary>Besoin d'un indice ?</summary><p>Factorise d'abord par 2 : <span class="math">Q(x) = 2(x² + 4x) + 3</span>. Puis utilise <span class="math">x² + 4x = (x + 2)² − 4</span>.</p></details>
+    </div>
+  </section>
+
+  <section class="module" id="signe" aria-labelledby="s-title">
+    <article class="panel">
+      <p class="module-label"><span class="number">03</span> Comprendre</p>
+      <h3 id="s-title">Quand le produit est-il négatif ?</h3>
+      <p>Pour résoudre une <strong>inéquation</strong>, on repère les racines, puis on étudie le signe des facteurs sur les intervalles qu'elles délimitent.</p>
+      <div class="formula-block">(x + 2)(x − 5) ≤ 0</div>
+      <ol class="steps">
+        <li>Les valeurs qui annulent le produit sont <strong>−2 et 5</strong>.</li>
+        <li>Entre ces deux valeurs, les facteurs sont de <strong>signes contraires</strong> : le produit est négatif.</li>
+        <li>On cherche « ≤ 0 » : on inclut donc les deux racines. <strong>Solution : [−2 ; 5]</strong>.</li>
+      </ol>
+      <div class="example"><strong>Attention aux bornes</strong><p>« ≤ » ou « ≥ » inclut les zéros ; « &lt; » ou « &gt; » les exclut. Si un coefficient négatif multiplie le produit, son signe est inversé.</p></div>
+    </article>
+    <div class="panel right-panel">
+      <p class="question-kicker">À ton tour · 1 question</p>
+      <h3>Attention au signe « − »</h3>
+      <p class="question-statement">Résous <span class="math">−3(x − 1)(x + 4) &lt; 0</span>.</p>
+      <div class="answers" role="group" aria-label="Choisis un ensemble de solutions" data-single="signe">
+        <button type="button" class="choice" aria-pressed="false" data-option="a"><span class="letter">A</span><span class="math">]−∞ ; −4[ ∪ ]1 ; +∞[</span></button>
+        <button type="button" class="choice" aria-pressed="false" data-option="b"><span class="letter">B</span><span class="math">]−4 ; 1[</span></button>
+        <button type="button" class="choice" aria-pressed="false" data-option="c"><span class="letter">C</span><span class="math">[−4 ; 1]</span></button>
+      </div>
+      <div id="feedback-signe" class="feedback" role="status" aria-live="polite"></div>
+      <details class="hint"><summary>Besoin d'un indice ?</summary><p>Diviser par <span class="math">−3</span> <strong>inverse le sens</strong> de l'inégalité : <span class="math">(x − 1)(x + 4) &gt; 0</span>. Un produit de deux facteurs du premier degré est positif à l'extérieur de ses deux racines lorsque le coefficient de <span class="math">x²</span> est positif.</p></details>
+    </div>
+  </section>
+
+  <section class="takeaway" id="methode" aria-labelledby="m-title">
+    <div><p class="eyebrow" style="color:#9cd5bc">Pour faire le point</p><h2 id="m-title">Trois réflexes utiles</h2><p>Il ne s'agit pas d'apprendre trois recettes indépendantes : les racines, la forme canonique et le signe donnent trois regards complémentaires sur un même polynôme.</p></div>
+    <div class="note"><strong>À quelle question répond chaque outil ?</strong><span>Racines → Où <span class="math">P(x) = 0</span> ?<br>Forme canonique → Où se situe le sommet ?<br>Signe → Où <span class="math">P(x)</span> est-il positif ou négatif ?</span></div>
+  </section>
+
+  <section class="closing" aria-label="Pour aller un peu plus loin">
+    <article class="small-card"><p class="question-kicker">Une dernière vérification</p><h3>Une ou deux propositions exactes ?</h3><p>Pour <span class="math">P(x) = x² − 6x + 10</span>, coche <strong>toutes les propositions vraies</strong>.</p>
+      <fieldset class="multi-list" id="multi-question"><legend class="muted">Plusieurs réponses peuvent être exactes.</legend>
+        <label class="check-option"><input type="checkbox" value="a"><span>Le discriminant vaut −4.</span></label>
+        <label class="check-option"><input type="checkbox" value="b"><span><span class="math">P(x) = (x − 3)² + 1</span>.</span></label>
+        <label class="check-option"><input type="checkbox" value="c"><span><span class="math">P</span> possède deux racines réelles distinctes.</span></label>
+        <label class="check-option"><input type="checkbox" value="d"><span><span class="math">P(x) &lt; 0</span> pour tout réel <span class="math">x</span>.</span></label>
+      </fieldset>
+      <div class="multi-check-actions"><button type="button" class="button button-primary" id="verify-multi">Vérifier mes choix</button></div><div id="feedback-multi" class="feedback" role="status" aria-live="polite"></div>
+    </article>
+    <article class="small-card"><p class="question-kicker">Et ensuite ?</p><h3>Pour continuer ton entraînement</h3><p>Une fois ces idées comprises, reviens à ton cours et à ta fiche d'entraînement pour travailler :</p><ul><li>le discriminant et le nombre de racines ;</li><li>les variations des fonctions du second degré ;</li><li>les inéquations et problèmes concrets.</li></ul><p style="margin-top:19px" class="muted">Cet atelier s'appuie sur le cours et la fiche d'entraînement de Première spécialité. Il complète les ressources distribuées en classe et sur Éléa.</p></article>
+  </section>
+</main>
+<footer><div class="container footer-grid"><span>Maths · Première spécialité · Atelier d'aide sur le second degré</span><span>Pas de note ni de transmission de réponses. <button type="button" class="reset" id="reset-progress">Effacer ma progression locale</button></span></div></footer>
+<script>
+(() => {
+  'use strict';
+  const STORAGE = 'atelier-second-degre-1re-v1';
+  const correct = { racines: 'a', canonique: 'b', signe: 'a' };
+  const responses = {
+    racines: {
+      a: ['Oui, les deux racines sont 4 et 5.', 'En effet, (x − 4)(x − 5) = x² − 9x + 20. Donc P(x) = 0 exactement pour x = 4 ou x = 5.'],
+      b: ['Le signe a été inversé.', '(x + 4)(x + 5) = x² + 9x + 20. Pour obtenir −9x, les racines doivent être positives.'],
+      c: ['Le produit convient, mais pas la somme.', '2 × 10 = 20, mais 2 + 10 = 12. Il faut deux nombres de somme 9.']
+    },
+    canonique: {
+      a: ['Regarde le signe dans la parenthèse.', 'En développant 2(x − 2)² − 5, tu obtiens 2x² − 8x + 3 : le coefficient de x ne convient pas.'],
+      b: ['Oui, c’est la bonne forme canonique.', '2(x + 2)² − 5 = 2(x² + 4x + 4) − 5 = 2x² + 8x + 3. Le sommet est S(−2 ; −5).'],
+      c: ['Tu as trouvé le bon carré, mais pas la constante.', '2(x + 2)² + 5 = 2x² + 8x + 13. Il faut soustraire 5, pas ajouter 5.']
+    },
+    signe: {
+      a: ['Exact : la solution est l’extérieur des racines.', '−3(x − 1)(x + 4) < 0 équivaut à (x − 1)(x + 4) > 0. Les racines −4 et 1 sont exclues car l’inégalité est stricte.'],
+      b: ['Tu as repéré l’intérieur, mais le signe est inversé.', 'À x = 0, on obtient −3 × (−1) × 4 = 12 > 0. L’intervalle ]−4 ; 1[ ne convient donc pas.'],
+      c: ['Attention à la fois à la zone et aux bornes.', 'À x = −4 ou x = 1, l’expression vaut 0, ce qui ne vérifie pas « < 0 ».']
+    }
+  };
+
+  let unlocked = {};
+  try { unlocked = JSON.parse(localStorage.getItem(STORAGE) || '{}') || {}; }
+  catch { unlocked = {}; }
+  const save = () => { try { localStorage.setItem(STORAGE, JSON.stringify(unlocked)); } catch {} };
+  const updateProgress = () => {
+    const count = ['racines','canonique','signe','multi'].filter(k => unlocked[k]).length;
+    document.getElementById('progress-pill').textContent = `${count} / 4 questions débloquées`;
+  };
+  function showFeedback(id, ok, heading, content, kind) {
+    const el = document.getElementById('feedback-' + id);
+    el.className = 'feedback visible ' + (kind || (ok ? 'success' : 'error'));
+    el.replaceChildren();
+    const b = document.createElement('strong'); b.textContent = (ok ? '✓ ' : '↳ ') + heading;
+    const p = document.createElement('span'); p.textContent = content;
+    el.append(b,p);
+  }
+
+  document.querySelectorAll('[data-single]').forEach(group => {
+    const id = group.dataset.single;
+    group.querySelectorAll('button.choice').forEach(btn => btn.addEventListener('click', () => {
+      group.querySelectorAll('button.choice').forEach(other => {
+        other.setAttribute('aria-pressed', String(other === btn));
+        other.classList.remove('is-correct','is-wrong');
+      });
+      const choice = btn.dataset.option;
+      const ok = choice === correct[id];
+      btn.classList.add(ok ? 'is-correct' : 'is-wrong');
+      const [head, body] = responses[id][choice];
+      showFeedback(id, ok, head, body);
+      if (ok) { unlocked[id] = true; save(); updateProgress(); }
+    }));
+  });
+
+  document.getElementById('verify-multi').addEventListener('click', () => {
+    const selected = [...document.querySelectorAll('#multi-question input:checked')].map(el => el.value).sort().join(',');
+    if (!selected) {
+      showFeedback('multi',false,'Sélectionne au moins une proposition.','Tu peux sélectionner plusieurs cases avant de vérifier.','neutral');
+      return;
+    }
+    const ok = selected === 'a,b';
+    if (ok) {
+      showFeedback('multi',true,'Exact : A et B sont les deux propositions vraies.','Δ = (−6)² − 4 × 1 × 10 = −4. Et x² − 6x + 10 = (x − 3)² + 1 ≥ 1, donc aucune racine réelle.');
+      unlocked.multi = true; save(); updateProgress();
+    } else {
+      showFeedback('multi',false,'Ce n’est pas encore tout à fait ça.','Calcule Δ, puis regarde la forme (x − 3)² + 1 : elle montre que le polynôme est strictement positif pour tout réel. Deux réponses sont vraies.');
+    }
+  });
+
+  document.getElementById('reset-progress').addEventListener('click', () => {
+    unlocked = {}; save(); updateProgress();
+    document.querySelectorAll('.feedback').forEach(el => {el.className='feedback';el.replaceChildren();});
+    document.querySelectorAll('.choice').forEach(btn => {btn.setAttribute('aria-pressed','false');btn.classList.remove('is-correct','is-wrong');});
+    document.querySelectorAll('#multi-question input').forEach(input => { input.checked = false; });
+    document.getElementById('choisir').scrollIntoView({behavior:'smooth'});
+  });
+  updateProgress();
+
+  // Graphique déterministe et autonome : aucune bibliothèque externe.
+  const svg = document.getElementById('graph-elements');
+  const slider = document.getElementById('x-slider');
+  const ns = 'http://www.w3.org/2000/svg';
+  const xMin=-1,xMax=7,yMin=-1,yMax=18, left=60, top=72, width=500,height=190;
+  const px = x => left + (x-xMin)*width/(xMax-xMin);
+  const py = y => top+height-(y-yMin)*height/(yMax-yMin);
+  const f = x => (x-3)**2+1;
+  const make = (tag,attrs,text) => {const e=document.createElementNS(ns,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,String(v)));if(text!==undefined)e.textContent=text;svg.append(e);return e;};
+  [0,5,10,15].forEach(y => {make('line',{x1:left,y1:py(y),x2:left+width,y2:py(y),stroke:'#e6ece9','stroke-width':1}); make('text',{x:left-12,y:py(y)+5,'text-anchor':'end','font-size':12,fill:'#6b8177'},String(y));});
+  [0,1,2,3,4,5,6].forEach(x => {make('line',{x1:px(x),y1:top,x2:px(x),y2:top+height,stroke:'#edf1ec','stroke-width':1});make('text',{x:px(x),y:py(0)+20,'text-anchor':'middle','font-size':12,fill:'#6b8177'},String(x));});
+  make('line',{x1:left,y1:py(0),x2:left+width,y2:py(0),stroke:'#718579','stroke-width':1.4});
+  make('line',{x1:px(0),y1:top,x2:px(0),y2:top+height,stroke:'#718579','stroke-width':1.4});
+  make('text',{x:width+left+8,y:py(0)+4,'font-size':12,fill:'#51675f'},'x');
+  const d = Array.from({length:161},(_,i)=>{const x=xMin+i*(xMax-xMin)/160;return `${i?'L':'M'} ${px(x).toFixed(2)} ${py(f(x)).toFixed(2)}`;}).join(' ');
+  make('path',{d,fill:'none',stroke:'#167261','stroke-width':3.5,'stroke-linecap':'round','stroke-linejoin':'round'});
+  make('circle',{cx:px(3),cy:py(1),r:5.5,fill:'#d28b36',stroke:'white','stroke-width':2});
+  make('text',{x:px(3)+12,y:py(1)-11,'font-size':13,fill:'#835917','font-weight':'700'},'S(3 ; 1)');
+  const dot=make('circle',{cx:px(3),cy:py(1),r:8,fill:'#14584c',stroke:'white','stroke-width':3});
+  const fmt=x=>Number(x).toLocaleString('fr-FR',{maximumFractionDigits:2});
+  function setDot() {
+    const x=Number(slider.value), y=f(x);
+    dot.setAttribute('cx',px(x));dot.setAttribute('cy',py(y));
+    document.getElementById('x-value').textContent='x = '+fmt(x);
+    document.getElementById('graph-readout').textContent=`Pour x = ${fmt(x)}, P(x) = ${fmt(y)}${x===3?' : c’est le minimum.':' : on a toujours P(x) ≥ 1.'}`;
+  }
+  slider.addEventListener('input',setDot); setDot();
+})();
+</script>
+</body>
+</html>
