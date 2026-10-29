@@ -353,15 +353,18 @@
   <section class="module" id="signe" aria-labelledby="s-title">
     <article class="panel">
       <p class="module-label"><span class="number">03</span> Comprendre</p>
-      <h3 id="s-title">Quand le produit est-il négatif ?</h3>
-      <p>Pour résoudre une <strong>inéquation</strong>, on repère les racines, puis on étudie le signe des facteurs sur les intervalles qu'elles délimitent.</p>
-      <div class="formula-block">(x + 2)(x − 5) ≤ 0</div>
-      <ol class="steps">
-        <li>Les valeurs qui annulent le produit sont <strong>−2 et 5</strong>.</li>
-        <li>Entre ces deux valeurs, les facteurs sont de <strong>signes contraires</strong> : le produit est négatif.</li>
-        <li>On cherche « ≤ 0 » : on inclut donc les deux racines. <strong>Solution : [−2 ; 5]</strong>.</li>
-      </ol>
-      <div class="example"><strong>Attention aux bornes</strong><p>« ≤ » ou « ≥ » inclut les zéros ; « &lt; » ou « &gt; » les exclut. Si un coefficient négatif multiplie le produit, son signe est inversé.</p></div>
+      <h3 id="s-title">Comment connaître le signe d’un trinôme ?</h3>
+      <p>Pour un trinôme <span class="math">P(x) = ax² + bx + c</span>, avec <span class="math">a ≠ 0</span>, chercher les racines ne suffit pas : <strong>il peut ne pas y en avoir</strong>. Le discriminant permet de distinguer trois situations.</p>
+      <div class="formula-block">Δ = b² − 4ac</div>
+      <div class="sign-cases">
+        <div class="sign-case"><strong>Δ &lt; 0 : aucune racine réelle</strong><p>Le trinôme garde le <strong>signe de a</strong> sur ℝ.</p></div>
+        <div class="sign-case"><strong>Δ = 0 : une racine double</strong><p>Le trinôme vaut 0 en <span class="math">−b/(2a)</span> et garde le <strong>signe de a</strong> ailleurs.</p></div>
+        <div class="sign-case"><strong>Δ &gt; 0 : deux racines distinctes</strong><p>Il a le <strong>signe de a à l’extérieur</strong> des deux racines, et le <strong>signe opposé entre elles</strong>. Il s’annule aux racines.</p></div>
+      </div>
+      <div class="example"><strong>Sans racine, mais avec un signe !</strong><p><span class="math">x² − 6x + 10 = (x − 3)² + 1 &gt; 0</span> pour tout réel : ici <span class="math">Δ = −4</span> et <span class="math">a = 1 &gt; 0</span>.</p></div>
+      <p class="keyline">Pour <strong>résoudre une inéquation</strong>, on étudie d’abord le signe du trinôme, puis on retient les valeurs qui vérifient l’inégalité.</p>
+      <div class="example"><strong>Deux racines : exemple</strong><p><span class="math">(x + 2)(x − 5) ≤ 0</span> possède les racines −2 et 5, avec <span class="math">a = 1 &gt; 0</span>. Le produit est négatif entre elles, nul aux bornes : <strong>solution [−2 ; 5]</strong>.</p></div>
+      <div class="example"><strong>Attention aux bornes</strong><p>« ≤ » et « ≥ » incluent les racines ; « &lt; » et « &gt; » les excluent. Si <span class="math">a &lt; 0</span>, les signes sont inversés.</p></div>
     </article>
     <div class="panel right-panel">
       <p class="question-kicker">À ton tour · 1 question</p>
