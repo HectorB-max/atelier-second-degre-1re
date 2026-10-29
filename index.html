@@ -316,7 +316,7 @@
 </section>
 <main id="contenu" class="container">
   <section id="choisir" aria-labelledby="choose-heading">
-    <div class="section-top"><div><p class="eyebrow">À toi de choisir</p><h2 id="choose-heading">Qu'est-ce qui te bloque ?</h2><p class="section-desc">Il n'y a pas d'ordre imposé. Chaque atelier contient un rappel, un exemple et une courte question d'entraînement.</p></div><div class="progress-pill" id="progress-pill" aria-live="polite">0 / 7 questions débloquées</div></div>
+    <div class="section-top"><div><p class="eyebrow">À toi de choisir</p><h2 id="choose-heading">Qu'est-ce qui te bloque ?</h2><p class="section-desc">Il n'y a pas d'ordre imposé. Chaque atelier contient un rappel, un exemple et une courte question d'entraînement.</p></div><div class="progress-pill" id="progress-pill" aria-live="polite">0 / 10 questions débloquées</div></div>
     <nav class="routes" aria-label="Choisir un atelier">
       <a class="route" href="#racines"><span class="route-icon" aria-hidden="true">01</span><strong>Trouver des racines</strong><span>Trouver quand P(x) vaut 0.</span></a>
       <a class="route" href="#canonique"><span class="route-icon" aria-hidden="true">02</span><strong>Comprendre la forme canonique</strong><span>Voir le sommet et comprendre les variations de la parabole.</span></a>
@@ -444,8 +444,8 @@
         </div><div class="feedback" id="feedback-var2" role="status" aria-live="polite"></div>
       </article>
       <article class="variation-question">
-        <p class="question-kicker">Question 3 · Sans développer</p><h3>Compare deux images</h3>
-        <p>Pour <span class="math">h(x) = (x − 2)² + 1</span>, compare <span class="math">h(1)</span> et <span class="math">h(2,5)</span>.</p>
+        <p class="question-kicker">Question 3 · <i class="math math-lower">a</i> négatif</p><h3>Compare deux images</h3>
+        <p>Pour <span class="math">h(x) = −(x − 2)² + 1</span>, compare <span class="math">h(1)</span> et <span class="math">h(2,5)</span>, sans développer.</p>
         <div class="answers" role="group" data-single="var3" aria-label="Comparer deux images">
           <button class="choice" type="button" data-option="a" aria-pressed="false"><span class="letter">A</span><span class="math">h(1) &gt; h(2,5)</span></button>
           <button class="choice" type="button" data-option="b" aria-pressed="false"><span class="letter">B</span><span class="math">h(1) &lt; h(2,5)</span></button>
@@ -492,7 +492,7 @@
   </section>
 
   <section class="closing" aria-label="Pour aller un peu plus loin">
-    <article class="small-card"><p class="question-kicker">QCM de synthèse · Question 7 sur 7</p><h3>Une ou deux propositions exactes ?</h3><p>Pour <span class="math">P(x) = x² − 6x + 10</span>, coche <strong>toutes les propositions vraies</strong>.</p>
+    <article class="small-card"><p class="question-kicker">QCM de synthèse · Question 10 sur 10</p><h3>Une ou deux propositions exactes ?</h3><p>Pour <span class="math">P(x) = x² − 6x + 10</span>, coche <strong>toutes les propositions vraies</strong>.</p>
       <fieldset class="multi-list" id="multi-question"><legend class="muted">Plusieurs réponses peuvent être exactes.</legend>
         <label class="check-option"><input type="checkbox" value="a"><span>Le discriminant vaut −4.</span></label>
         <label class="check-option"><input type="checkbox" value="b"><span><span class="math">P(x) = (x − 3)² + 1</span>.</span></label>
@@ -552,7 +552,7 @@
   applyTheme(theme);
   themeButton.addEventListener('click', () => applyTheme(theme === 'dark' ? 'light' : 'dark', true));
   const STORAGE = 'atelier-second-degre-1re-v1';
-  const correct = { racines: 'a', canonique: 'b', signe: 'a', var1:'a', var2:'b', var3:'a' };
+  const correct = { racines:'a',canonique:'b',signe:'a',var1:'a',var2:'b',var3:'b',var4:'a',var5:'b',var6:'c' };
   const responses = {
     racines: {
       a: ['Oui, les deux racines sont 4 et 5.', 'En effet, (x − 4)(x − 5) = x² − 9x + 20. Donc P(x) = 0 exactement pour x = 4 ou x = 5.'],
@@ -575,9 +575,24 @@
       c: ['Attention au signe dans la parenthèse.', '(x + 1)² est nul pour x = −1, et non pour x = 1.']
     },
     var3: {
-      a: ['Oui : h(1) est plus grand.', '1 est à distance 1 de 2 ; 2,5 est à distance 0,5. Ainsi, h(1) = 2 et h(2,5) = 1,25.'],
-      b: ['Compare les distances au sommet.', '1 est plus éloigné de 2 que 2,5 : son carré est donc plus grand.'],
-      c: ['Les distances sont différentes.', 'Par symétrie, h(1) = h(3), mais pas h(2,5) : ce dernier est plus proche de 2.']
+      a: ['Attention au coefficient négatif.', 'La distance au sommet est plus grande pour x = 1, mais on en soustrait le carré : h(1) = 0, h(2,5) = 0,75.'],
+      b: ['Oui : h(1) est plus petit.', 'On soustrait 1 pour x = 1 et seulement 0,25 pour x = 2,5. D’où h(1) = 0 < 0,75 = h(2,5).'],
+      c: ['Les distances au sommet diffèrent.', 'Les images sont égales pour deux nombres symétriques autour de 2, pas pour 1 et 2,5.']
+    },
+    var4: {
+      a: ['Exact : la fonction croît jusqu’à 3.', 'Avec a = −1, elle croît sur ]−∞ ; 3], atteint son maximum 2, puis décroît.'],
+      b: ['Attention au signe négatif.', 'La parabole est tournée vers le bas : elle croît avant son sommet, puis décroît.'],
+      c: ['Elle change de sens.', 'Le changement de sens intervient en x = 3, même si a est négatif.']
+    },
+    var5: {
+      a: ['−2 n’est pas le maximum.', '−2 est l’abscisse du sommet ; l’ordonnée du sommet vaut −1.'],
+      b: ['Exact : k(x) ≤ −1.', 'Puisque −2(x + 2)² ≤ 0, on a k(x) ≤ −1 pour tout réel, avec égalité en x = −2.'],
+      c: ['Elle ne devient jamais positive.', 'Le maximum vaut −1 : toutes les images sont strictement négatives.']
+    },
+    var6: {
+      a: ['Compare les distances au sommet.', 'x = 1,5 est plus proche du sommet x = 1 que x = −1 ; son image est plus grande pour a négatif.'],
+      b: ['Pas d’égalité par symétrie.', '−1 et 1,5 ne sont pas à la même distance de x = 1.'],
+      c: ['Exact : u(−1) < u(1,5).', 'u(−1) = 0 et u(1,5) = 3,75 : pour a négatif, plus on est proche du sommet, plus l’image est élevée.']
     },
     signe: {
       a: ['Exact : la solution est l’extérieur des racines.', '−3(x − 1)(x + 4) < 0 équivaut à (x − 1)(x + 4) > 0. Les racines −4 et 1 sont exclues car l’inégalité est stricte.'],
@@ -591,8 +606,8 @@
   catch { unlocked = {}; }
   const save = () => { try { localStorage.setItem(STORAGE, JSON.stringify(unlocked)); } catch {} };
   const updateProgress = () => {
-    const count = ['racines','canonique','signe','multi','var1','var2','var3'].filter(k => unlocked[k]).length;
-    document.getElementById('progress-pill').textContent = `${count} / 7 questions débloquées`;
+    const count = ['racines','canonique','signe','multi','var1','var2','var3','var4','var5','var6'].filter(k => unlocked[k]).length;
+    document.getElementById('progress-pill').textContent = `${count} / 10 questions débloquées`;
   };
   function showFeedback(id, ok, heading, content, kind) {
     const el = document.getElementById('feedback-' + id);
