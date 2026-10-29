@@ -464,7 +464,7 @@
       visitCaption.textContent = 'Compteur momentanément indisponible.';
     });
   const STORAGE = 'atelier-second-degre-1re-v1';
-  const correct = { racines: 'a', canonique: 'b', signe: 'a' };
+  const correct = { racines: 'a', canonique: 'b', signe: 'a', var1:'a', var2:'b', var3:'a' };
   const responses = {
     racines: {
       a: ['Oui, les deux racines sont 4 et 5.', 'En effet, (x − 4)(x − 5) = x² − 9x + 20. Donc P(x) = 0 exactement pour x = 4 ou x = 5.'],
@@ -488,8 +488,8 @@
   catch { unlocked = {}; }
   const save = () => { try { localStorage.setItem(STORAGE, JSON.stringify(unlocked)); } catch {} };
   const updateProgress = () => {
-    const count = ['racines','canonique','signe','multi'].filter(k => unlocked[k]).length;
-    document.getElementById('progress-pill').textContent = `${count} / 4 questions débloquées`;
+    const count = ['racines','canonique','signe','multi','var1','var2','var3'].filter(k => unlocked[k]).length;
+    document.getElementById('progress-pill').textContent = `${count} / 7 questions débloquées`;
   };
   function showFeedback(id, ok, heading, content, kind) {
     const el = document.getElementById('feedback-' + id);
