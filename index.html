@@ -261,7 +261,7 @@
 </section>
 <main id="contenu" class="container">
   <section id="choisir" aria-labelledby="choose-heading">
-    <div class="section-top"><div><p class="eyebrow">À toi de choisir</p><h2 id="choose-heading">Qu'est-ce qui te bloque ?</h2><p class="section-desc">Il n'y a pas d'ordre imposé. Chaque atelier contient un rappel, un exemple et une courte question d'entraînement.</p></div><div class="progress-pill" id="progress-pill" aria-live="polite">0 / 4 questions débloquées</div></div>
+    <div class="section-top"><div><p class="eyebrow">À toi de choisir</p><h2 id="choose-heading">Qu'est-ce qui te bloque ?</h2><p class="section-desc">Il n'y a pas d'ordre imposé. Chaque atelier contient un rappel, un exemple et une courte question d'entraînement.</p></div><div class="progress-pill" id="progress-pill" aria-live="polite">0 / 7 questions débloquées</div></div>
     <nav class="routes" aria-label="Choisir un atelier">
       <a class="route" href="#racines"><span class="route-icon" aria-hidden="true">01</span><strong>Trouver des racines</strong><span>Comprendre ce que signifie « résoudre P(x) = 0 ».</span></a>
       <a class="route" href="#canonique"><span class="route-icon" aria-hidden="true">02</span><strong>Comprendre la forme canonique</strong><span>Voir le sommet et comprendre les variations de la parabole.</span></a>
@@ -320,9 +320,17 @@
         <p class="variation-general"><strong>Et si le coefficient <span class="math">a</span> est négatif ?</strong> Pour <span class="math">a(x − α)² + β</span>, si <span class="math">a &gt; 0</span>, la fonction décroît puis croît : elle admet un minimum. Si <span class="math">a &lt; 0</span>, c'est l'inverse : elle croît puis décroît et admet un maximum. Dans les deux cas, le changement a lieu en <span class="math">x = α</span>.</p>
       </div>
       <div class="graph-container">
-        <svg id="parabola" viewBox="0 0 610 300" role="img" aria-label="Parabole y égale x moins 3 au carré plus 1, dont le sommet est en 3 et 1. Déplace le curseur pour explorer une valeur de la fonction.">
-          <text x="20" y="32" fill="#595778" font-size="15">Visualisation de P(x) = (x − 3)² + 1</text>
-          <text x="20" y="58" fill="#595778" font-size="13">La courbe descend jusqu'au sommet, puis remonte.</text>
+        <div class="graph-switch">
+          <span>Change le signe de <span class="math">a</span> :</span>
+          <div class="switch-actions" role="group" aria-label="Signe du coefficient a">
+            <button type="button" class="sign-button" data-a="1" aria-pressed="true">a = +1</button>
+            <button type="button" class="sign-button" data-a="-1" aria-pressed="false">a = −1</button>
+          </div>
+        </div>
+        <p class="graph-explainer" id="graph-explainer">Avec a = 1, la parabole est tournée vers le haut : minimum en S(3 ; 1).</p>
+        <svg id="parabola" viewBox="0 0 610 300" role="img" aria-label="Parabole interactive de P(x) = a(x − 3)² + 1. Change le signe de a et déplace le curseur.">
+          <text id="graph-title" x="20" y="32" fill="#595778" font-size="15">Visualisation de P(x) = (x − 3)² + 1</text>
+          <text id="graph-subtitle" x="20" y="58" fill="#595778" font-size="13">La courbe descend jusqu'au sommet, puis remonte.</text>
           <g id="graph-elements"></g>
         </svg>
         <div class="graph-controls"><label for="x-slider"><span>Déplace le point sur la parabole</span><output id="x-value" for="x-slider">x = 3</output></label><input id="x-slider" type="range" min="-1" max="7" value="3" step="0.25"><div class="graph-readout" id="graph-readout" aria-live="polite">Pour x = 3, P(x) = 1 : c'est le minimum.</div></div>
@@ -375,7 +383,7 @@
   </section>
 
   <section class="closing" aria-label="Pour aller un peu plus loin">
-    <article class="small-card"><p class="question-kicker">QCM de synthèse · Question 4 sur 4</p><h3>Une ou deux propositions exactes ?</h3><p>Pour <span class="math">P(x) = x² − 6x + 10</span>, coche <strong>toutes les propositions vraies</strong>.</p>
+    <article class="small-card"><p class="question-kicker">QCM de synthèse · Question 7 sur 7</p><h3>Une ou deux propositions exactes ?</h3><p>Pour <span class="math">P(x) = x² − 6x + 10</span>, coche <strong>toutes les propositions vraies</strong>.</p>
       <fieldset class="multi-list" id="multi-question"><legend class="muted">Plusieurs réponses peuvent être exactes.</legend>
         <label class="check-option"><input type="checkbox" value="a"><span>Le discriminant vaut −4.</span></label>
         <label class="check-option"><input type="checkbox" value="b"><span><span class="math">P(x) = (x − 3)² + 1</span>.</span></label>
