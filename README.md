@@ -4,7 +4,7 @@ Site pédagogique de remédiation sur les polynômes du second degré.
 
 ## Contenu
 
-- Trois ateliers : racines, forme canonique et signe.
+- Trois ateliers : racines, forme canonique (sommet, extremum et sens de variation) et signe.
 - Méthodes, exemples guidés et quatre questions interactives avec retours explicatifs.
 - Parabole manipulable avec un curseur.
 - Sans compte élève, sans notation et sans collecte de réponses. Progression enregistrée dans le navigateur.
@@ -19,14 +19,14 @@ Une fois GitHub Pages activé, le site sera accessible à l'adresse indiquée da
 
 ## Compteur de visites
 
-Un badge « Visites » est affiché dans l’en-tête de la page. Il est servi par [Hits](https://hits.sh/) sous la forme d'une image SVG distante, sans script d’analytique ni compte élève.
+Compteur numérique dans l’en-tête, alimenté par l’API publique [Abacus](https://abacus.jasoncameron.dev/). Le précédent badge SVG de hits.sh ne s’affichait pas dans Firefox avec certains bloqueurs de contenu et a été remplacé.
 
-- Il compte les requêtes sur le badge (affichages de page observés) **à partir de sa mise en place**, pas les consultations antérieures ni les visiteurs uniques.
-- Les rechargements de page, les prévisualisations, certains robots et les protections de navigateur peuvent augmenter ou diminuer le décompte par rapport aux visites humaines réelles.
-- Le service est tiers : une requête est envoyée à `hits.sh` pour afficher l’image. L’attribut `referrerpolicy="no-referrer"` empêche l’envoi du référent HTTP depuis l’image.
-- Le fournisseur indique ne pas utiliser de cookies ni enregistrer d’adresse IP pour ce compteur : [politique de confidentialité](https://hits.sh/privacy/).
-- Ne pas intégrer ce badge à une capture, un test de rendu ou un README qui le chargerait automatiquement : cela fausserait les chiffres. Pour les tests locaux, intercepter la requête externe ou utiliser une URL de test distincte.
-- Le chiffre peut disparaître ou être réinitialisé si le fournisseur arrête son service ; il n’est pas une mesure certifiée de fréquentation.
+- Le compteur est global, sans création de compte élève. Il démarre lors de la mise en service de cette version : les chiffres de hits.sh ne sont pas transférés.
+- Sur un nouvel onglet/session, une requête `/hit/` incrémente le compteur ; les rechargements de la même session utilisent `/get/` (sessionStorage).
+- Ce sont des sessions approximatives, **pas des personnes distinctes** ni des statistiques certifiées. D’autres clients peuvent appeler les mêmes URL publiques ; des requêtes automatisées et des bloqueurs affectent les résultats.
+- Une requête HTTPS vers le serveur tiers Abacus est nécessaire : ce serveur peut recevoir des données techniques de connexion telles que l’adresse IP. Aucune donnée personnelle d’élève n’est ajoutée à la requête par le site. `referrerPolicy: 'no-referrer'` limite les informations de référent envoyées.
+- En cas de blocage ou de panne, la page indique « — » et « Compteur momentanément indisponible », au lieu d’un chiffre trompeur.
+- Pour les tests locaux automatisés, intercepter les requêtes vers Abacus et simuler la réponse afin de ne pas créer de fausses visites.
 
 ## Sources pédagogiques
 

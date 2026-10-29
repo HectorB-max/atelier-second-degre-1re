@@ -201,6 +201,19 @@
     .closing .small-card:last-child {background:linear-gradient(155deg,#fff7f0,#fff 60%);border-color:#f1e0d6;}
     .reset {color:#4b4c9b;}
     @media (prefers-reduced-motion:reduce) { .hero::before {opacity:.2;} }
+    /* Forme canonique : visualiser les variations autour du sommet, sans valeurs aux infinis. */
+    .variation-card {margin-top:22px;padding:20px 20px 17px;border-radius:15px;background:linear-gradient(140deg,#fff8f3,#fff 76%);border:1px solid #f1dacf;}
+    .variation-card > strong {display:block;font-size:1rem;color:#a44843;margin-bottom:9px;}
+    .variation-card p {margin:0 0 14px;line-height:1.62;font-size:.94rem;}
+    .variation-card p:last-child {margin-bottom:0;}
+    .variation-scheme {display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;margin:17px 0;padding:12px 8px;border-radius:12px;background:white;border:1px solid #f0e2da;text-align:center;}
+    .variation-scheme span {display:grid;justify-items:center;gap:2px;min-width:0;}
+    .variation-scheme b {color:#9850a7;font-size:1.7rem;line-height:1.15;}
+    .variation-scheme .variation-summit {padding:8px 10px;border-radius:10px;background:#fff0e6;}
+    .variation-scheme .variation-summit b {font-size:1.05rem;color:#9e4938;white-space:nowrap;}
+    .variation-scheme small {font-size:.75rem;color:#575676;line-height:1.35;}
+    .variation-card .variation-general {background:#fff3e9;border-left:3px solid #d07858;padding:12px;border-radius:0 9px 9px 0;}
+    @media (max-width:640px) {.variation-card{padding:17px 15px}.variation-scheme{gap:4px;padding:9px 3px}.variation-scheme small{font-size:.66rem}.variation-scheme .variation-summit{padding:7px 5px}.variation-scheme .variation-summit b{font-size:.9rem}}
     /* Compteur global : badge SVG externe sans script de suivi. */
     .visit-counter {display:flex;align-items:center;gap:10px 12px;flex-wrap:wrap;width:fit-content;max-width:100%;margin-top:18px;padding:10px 13px;background:rgba(255,255,255,.86);border:1px solid #d9d6ed;border-radius:14px;box-shadow:0 6px 18px rgba(65,53,125,.07);}
     .visit-counter-icon {display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border-radius:9px;background:#ece7ff;color:#5f479f;font-weight:850;}
@@ -250,7 +263,7 @@
     <div class="section-top"><div><p class="eyebrow">À toi de choisir</p><h2 id="choose-heading">Qu'est-ce qui te bloque ?</h2><p class="section-desc">Il n'y a pas d'ordre imposé. Chaque atelier contient un rappel, un exemple et une courte question d'entraînement.</p></div><div class="progress-pill" id="progress-pill" aria-live="polite">0 / 4 questions débloquées</div></div>
     <nav class="routes" aria-label="Choisir un atelier">
       <a class="route" href="#racines"><span class="route-icon" aria-hidden="true">01</span><strong>Trouver des racines</strong><span>Comprendre ce que signifie « résoudre P(x) = 0 ».</span></a>
-      <a class="route" href="#canonique"><span class="route-icon" aria-hidden="true">02</span><strong>Comprendre la forme canonique</strong><span>Voir le sommet et expliquer le minimum ou le maximum.</span></a>
+      <a class="route" href="#canonique"><span class="route-icon" aria-hidden="true">02</span><strong>Comprendre la forme canonique</strong><span>Voir le sommet et comprendre les variations de la parabole.</span></a>
       <a class="route" href="#signe"><span class="route-icon" aria-hidden="true">03</span><strong>Étudier un signe</strong><span>Choisir les bons intervalles et les bonnes bornes.</span></a>
     </nav>
   </section>
@@ -292,12 +305,23 @@
       <ol class="steps">
         <li><span class="math">(x − 3)²</span> est toujours <strong>positif ou nul</strong>.</li>
         <li>Il est nul exactement lorsque <span class="math">x = 3</span>.</li>
-        <li>Ainsi, <span class="math">P</span> admet le <strong>minimum 1</strong>, atteint pour <span class="math">x = 3</span>. Elle n'a aucune racine réelle.</li>
+        <li>Ainsi, <span class="math">P</span> admet le <strong>minimum 1</strong>, atteint pour <span class="math">x = 3</span>. Le polynôme n'a aucune racine réelle.</li>
       </ol>
+      <div class="variation-card">
+        <strong>Et dans quel sens la fonction varie-t-elle ?</strong>
+        <p>Quand <span class="math">x</span> se rapproche de <span class="math">3</span> par la gauche, la distance à <span class="math">3</span> diminue : <span class="math">(x − 3)²</span> diminue aussi. Après <span class="math">3</span>, cette distance grandit : le carré augmente.</p>
+        <div class="variation-scheme" role="img" aria-label="Quand x augmente, P décroît jusqu'à x égale 3, atteint son minimum 1, puis P croît.">
+          <span><b>↘</b><small>Décroît jusqu'à 3</small></span>
+          <span class="variation-summit"><b>S(3 ; 1)</b><small>minimum : 1</small></span>
+          <span><b>↗</b><small>Croît après 3</small></span>
+        </div>
+        <p><strong>Donc</strong> <span class="math">P</span> est strictement décroissante sur <span class="math">]−∞ ; 3]</span>, puis strictement croissante sur <span class="math">[3 ; +∞[</span>.</p>
+        <p class="variation-general"><strong>Et si le coefficient <span class="math">a</span> est négatif ?</strong> Pour <span class="math">a(x − α)² + β</span>, si <span class="math">a &gt; 0</span>, la fonction décroît puis croît : elle admet un minimum. Si <span class="math">a &lt; 0</span>, c'est l'inverse : elle croît puis décroît et admet un maximum. Dans les deux cas, le changement a lieu en <span class="math">x = α</span>.</p>
+      </div>
       <div class="graph-container">
         <svg id="parabola" viewBox="0 0 610 300" role="img" aria-label="Parabole y égale x moins 3 au carré plus 1, dont le sommet est en 3 et 1. Déplace le curseur pour explorer une valeur de la fonction.">
           <text x="20" y="32" fill="#595778" font-size="15">Visualisation de P(x) = (x − 3)² + 1</text>
-          <text x="20" y="58" fill="#595778" font-size="13">La courbe reste au-dessus de l'axe horizontal.</text>
+          <text x="20" y="58" fill="#595778" font-size="13">La courbe descend jusqu'au sommet, puis remonte.</text>
           <g id="graph-elements"></g>
         </svg>
         <div class="graph-controls"><label for="x-slider"><span>Déplace le point sur la parabole</span><output id="x-value" for="x-slider">x = 3</output></label><input id="x-slider" type="range" min="-1" max="7" value="3" step="0.25"><div class="graph-readout" id="graph-readout" aria-live="polite">Pour x = 3, P(x) = 1 : c'est le minimum.</div></div>
@@ -346,7 +370,7 @@
 
   <section class="takeaway" id="methode" aria-labelledby="m-title">
     <div><p class="eyebrow" style="color:#d5c5ff">Pour faire le point</p><h2 id="m-title">Trois réflexes utiles</h2><p>Il ne s'agit pas d'apprendre trois recettes indépendantes : les racines, la forme canonique et le signe donnent trois regards complémentaires sur un même polynôme.</p></div>
-    <div class="note"><strong>À quelle question répond chaque outil ?</strong><span>Racines → Où <span class="math">P(x) = 0</span> ?<br>Forme canonique → Où se situe le sommet ?<br>Signe → Où <span class="math">P(x)</span> est-il positif ou négatif ?</span></div>
+    <div class="note"><strong>À quelle question répond chaque outil ?</strong><span>Racines → Où <span class="math">P(x) = 0</span> ?<br>Forme canonique → Où se situe le sommet, et comment la fonction varie-t-elle ?<br>Signe → Où <span class="math">P(x)</span> est-il positif ou négatif ?</span></div>
   </section>
 
   <section class="closing" aria-label="Pour aller un peu plus loin">
@@ -359,7 +383,7 @@
       </fieldset>
       <div class="multi-check-actions"><button type="button" class="button button-primary" id="verify-multi">Vérifier mes choix</button></div><div id="feedback-multi" class="feedback" role="status" aria-live="polite"></div>
     </article>
-    <article class="small-card"><p class="question-kicker">Et ensuite ?</p><h3>Pour continuer ton entraînement</h3><p>Une fois ces idées comprises, reviens à ton cours et à ta fiche d'entraînement pour travailler :</p><ul><li>le discriminant et le nombre de racines ;</li><li>les variations des fonctions du second degré ;</li><li>les inéquations et problèmes concrets.</li></ul><p style="margin-top:19px" class="muted">Cet atelier s'appuie sur le cours et la fiche d'entraînement de Première spécialité. Il complète les ressources distribuées en classe et sur Éléa.</p></article>
+    <article class="small-card"><p class="question-kicker">Et ensuite ?</p><h3>Pour continuer ton entraînement</h3><p>Une fois ces idées comprises, reviens à ton cours et à ta fiche d'entraînement pour travailler :</p><ul><li>le discriminant et le nombre de racines ;</li><li>les variations d'autres trinômes, notamment lorsque <span class="math">a &lt; 0</span> ;</li><li>les inéquations et problèmes concrets.</li></ul><p style="margin-top:19px" class="muted">Cet atelier s'appuie sur le cours et la fiche d'entraînement de Première spécialité. Il complète les ressources distribuées en classe et sur Éléa.</p></article>
   </section>
 </main>
 <footer><div class="container footer-grid"><span>Maths · Première spécialité · Atelier d'aide sur le second degré</span><span>Pas de note ni de transmission de réponses. <button type="button" class="reset" id="reset-progress">Effacer ma progression locale</button></span></div></footer>
@@ -402,7 +426,7 @@
     },
     canonique: {
       a: ['Regarde le signe dans la parenthèse.', 'En développant 2(x − 2)² − 5, tu obtiens 2x² − 8x + 3 : le coefficient de x ne convient pas.'],
-      b: ['Oui, c’est la bonne forme canonique.', '2(x + 2)² − 5 = 2(x² + 4x + 4) − 5 = 2x² + 8x + 3. Le sommet est S(−2 ; −5).'],
+      b: ['Oui, c’est la bonne forme canonique.', '2(x + 2)² − 5 = 2(x² + 4x + 4) − 5 = 2x² + 8x + 3. Le sommet est S(−2 ; −5) : comme 2 > 0, Q décroît jusqu’à −2, puis croît.'],
       c: ['Tu as trouvé le bon carré, mais pas la constante.', '2(x + 2)² + 5 = 2x² + 8x + 13. Il faut soustraire 5, pas ajouter 5.']
     },
     signe: {
@@ -493,7 +517,8 @@
     const x=Number(slider.value), y=f(x);
     dot.setAttribute('cx',px(x));dot.setAttribute('cy',py(y));
     document.getElementById('x-value').textContent='x = '+fmt(x);
-    document.getElementById('graph-readout').textContent=`Pour x = ${fmt(x)}, P(x) = ${fmt(y)}${x===3?' : c’est le minimum.':' : on a toujours P(x) ≥ 1.'}`;
+    const variation = x < 3 ? ' : avant le sommet, la fonction décroît quand x augmente.' : x > 3 ? ' : après le sommet, la fonction croît quand x augmente.' : ' : c’est le minimum ; la fonction change de sens de variation.';
+    document.getElementById('graph-readout').textContent=`Pour x = ${fmt(x)}, P(x) = ${fmt(y)}${variation}`;
   }
   slider.addEventListener('input',setDot); setDot();
 })();
