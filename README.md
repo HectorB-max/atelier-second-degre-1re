@@ -5,8 +5,10 @@ Site pédagogique de remédiation sur les polynômes du second degré.
 ## Contenu
 
 - Trois ateliers : racines, forme canonique (sommet, extremum et sens de variation) et signe.
-- Méthodes, exemples guidés et quatre questions interactives avec retours explicatifs.
-- Parabole manipulable avec un curseur.
+- Étude du signe d'un trinôme pour Δ < 0, Δ = 0 et Δ > 0, avant les inéquations.
+- Sept questions interactives avec retours explicatifs, dont trois consacrées aux variations.
+- Parabole interactive : curseur et choix entre a = +1 et a = −1 pour inverser le sens des variations.
+- Mode sombre activable et mémorisé localement dans le navigateur.
 - Sans compte élève, sans notation et sans collecte de réponses. Progression enregistrée dans le navigateur.
 
 ## Consulter et publier

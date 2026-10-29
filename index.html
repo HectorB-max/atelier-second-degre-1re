@@ -221,6 +221,61 @@
     .visit-counter-count strong {font-size:1.3rem;min-width:2ch;font-variant-numeric:tabular-nums;color:#ffdc93;}
     .visit-counter-caption {font-size:.75rem;line-height:1.35;color:#65627c;max-width:235px;}
     @media (max-width:640px) {.visit-counter {gap:9px;}.visit-counter-caption{flex-basis:100%;max-width:none;}}
+    /* Ateliers ajoutés : contraste, géométrie et questionnaire. */
+    .theme-toggle {display:inline-flex;align-items:center;justify-content:center;gap:7px;margin-left:auto;padding:8px 11px;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink);font-size:.82rem;font-weight:750;white-space:nowrap;}
+    .theme-toggle:hover {border-color:#8b75d3;}
+    .theme-icon {font-size:1.12rem;line-height:1;}
+    .graph-switch {display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:12px;background:var(--forest-soft);border-radius:12px;}
+    .graph-switch > span {font-size:.9rem;font-weight:800;}
+    .switch-actions {display:flex;gap:6px;flex-wrap:wrap;}
+    .sign-button {padding:6px 12px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:10px;font-weight:750;}
+    .sign-button[aria-pressed="true"] {background:#5143ab;color:white;border-color:#5143ab;}
+    .graph-explainer {padding:10px 12px 0;margin:0;font-size:.86rem;color:var(--muted);}
+    html, body {overflow-x:clip;}
+    .variation-quiz {scroll-margin-top:103px;margin:0 0 55px;padding:28px;border-radius:22px;background:linear-gradient(125deg,#f1edff,#fff8f3);border:1px solid var(--line);}
+    .variation-quiz .eyebrow {margin-bottom:8px;}
+    .variation-quiz-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:23px;}
+    .variation-question {min-width:0;background:var(--paper);border:1px solid var(--line);border-top:4px solid #8464c4;border-radius:16px;padding:20px;}
+    .variation-question:nth-child(2) {border-top-color:#d37169;}
+    .variation-question:nth-child(3) {border-top-color:#d49a39;}
+    .variation-question h3 {font-size:1.12rem;margin-bottom:12px;}
+    .variation-question .question-kicker {color:#7652b5;}
+    .variation-question .choice {padding:12px 9px;align-items:flex-start;font-size:.88rem;}
+    .variation-question .feedback {font-size:.88rem;}
+    .sign-cases {display:grid;gap:10px;margin:18px 0;}
+    .sign-case {background:#f5f1ff;border:1px solid #e7def6;border-radius:12px;padding:14px 15px;}
+    .sign-case:nth-child(2) {background:#fff5ed;border-color:#f3ddd1;}
+    .sign-case:nth-child(3) {background:#eef2ff;border-color:#dbe3fb;}
+    .sign-case strong {display:block;color:#574196;margin-bottom:5px;}
+    .sign-case p {margin:0;font-size:.92rem;}
+    html.dark {color-scheme:dark;--bg:#15182b;--paper:#252941;--ink:#edf0ff;--muted:#c0c6db;--line:#424866;--forest:#b5c4ff;--forest-soft:#30395c;}
+    .dark body {background:#15182b;}
+    .dark .site-top {background:#171b30;}
+    .dark .hero {background:linear-gradient(135deg,#1c2340,#30284a);}
+    .dark .visual-card,.dark .panel,.dark .small-card {background:#252941;border-color:#444a69;color:#edf0ff;}
+    .dark .lead,.dark .hero-note {color:#ccd0e7;}
+    .dark .route {background:#292e48;color:#edf0ff;}
+    .dark .module .right-panel {background:#2b304a;}
+    .dark .choice {background:#343954;color:#edf0ff;border-color:#5d6486;}
+    .dark .graph-container {background:#202842;}
+    .dark .graph-readout {background:#34365b;color:#e1d6ff;}
+    .dark .variation-card,.dark .variation-scheme {background:#2a304b;color:#edf0ff;}
+    .dark .variation-card > strong {color:#ffd0bf;}
+    .dark .sign-case,.dark .sign-case:nth-child(2),.dark .sign-case:nth-child(3) {background:#323653;color:#edf0ff;border-color:#515978;}
+    .dark .sign-case strong {color:#d4baff;}
+    .dark .variation-quiz {background:#2b2b48;}
+    .dark .variation-card .variation-general {background:#3b3451;color:#edf0ff;}
+    .dark .closing .small-card:last-child {background:#252941;color:#edf0ff;}
+    .dark .keyline {color:#e7defc;}
+    .dark .choice.is-correct,.dark .choice[aria-pressed="true"].is-correct {background:#234b3b;color:#dbffe8;border-color:#69d4aa;}
+    .dark .choice.is-wrong,.dark .choice[aria-pressed="true"].is-wrong {background:#593549;color:#ffe2ec;border-color:#de889f;}
+    .dark .variation-question .question-kicker {color:#c9b5ff;}
+    .dark .module .module-label {color:#d5bfff;}
+    .dark .variation-scheme .variation-summit {background:#4d3c55;}
+    .dark .module .formula-block,.dark .module .example {background:#303751;color:#edf0ff;border-color:#505677;}
+    .dark .module .example strong {color:#ffb4aa;}
+    @media (max-width:890px) {.variation-quiz-grid{grid-template-columns:1fr}.variation-quiz{padding:19px}.theme-toggle .theme-label{display:none}.meta{display:none}}
+    @media (max-width:640px) {.site-top .top-link{display:none}}
     @media (max-width:890px) {.hero-grid{grid-template-columns:1fr;gap:30px}.visual-card{display:none}.module{grid-template-columns:1fr}.routes{gap:10px}.route{padding:19px;min-height:185px}}
     @media (max-width:640px) {.container{width:min(100% - 30px,1110px)}.hero{padding:50px 0}.bar{min-height:62px}.brand{font-size:.99rem}.brand-mark{width:30px;height:30px}.meta{display:none}.top-link{padding:7px 11px;font-size:.79rem}.routes,.closing,.takeaway{grid-template-columns:1fr}.route{min-height:unset}.section-top{align-items:start;flex-direction:column}.panel{padding:22px}.takeaway{padding:26px 22px}.formula-block{font-size:1.16rem}.hero-actions .button{width:100%}}
     @media (prefers-reduced-motion:reduce) {html{scroll-behavior:auto}.route{transition:none}}
@@ -463,6 +518,23 @@
       visitNumber.textContent = '—';
       visitCaption.textContent = 'Compteur momentanément indisponible.';
     });
+  // Apparence sauvegardée localement.
+  const themeButton = document.getElementById('theme-toggle');
+  let theme = 'light';
+  try { theme = localStorage.getItem('atelier-theme-second-degre') === 'dark' ? 'dark' : 'light'; } catch {}
+  function applyTheme(mode, redraw = false) {
+    theme = mode;
+    document.documentElement.classList.toggle('dark', mode === 'dark');
+    themeButton.setAttribute('aria-pressed', String(mode === 'dark'));
+    themeButton.setAttribute('aria-label', mode === 'dark' ? 'Activer le mode clair' : 'Activer le mode sombre');
+    themeButton.querySelector('.theme-label').textContent = mode === 'dark' ? 'Mode clair' : 'Mode sombre';
+    themeButton.querySelector('.theme-icon').textContent = mode === 'dark' ? '☀' : '☾';
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', mode === 'dark' ? '#14172b' : '#f8f7ff');
+    try { localStorage.setItem('atelier-theme-second-degre', mode); } catch {}
+    if (redraw) renderGraph();
+  }
+  applyTheme(theme);
+  themeButton.addEventListener('click', () => applyTheme(theme === 'dark' ? 'light' : 'dark', true));
   const STORAGE = 'atelier-second-degre-1re-v1';
   const correct = { racines: 'a', canonique: 'b', signe: 'a', var1:'a', var2:'b', var3:'a' };
   const responses = {
@@ -555,34 +627,69 @@
   });
   updateProgress();
 
-  // Graphique déterministe et autonome : aucune bibliothèque externe.
+  // Parabole de sommet fixe S(3 ; 1), coefficient a = +1 ou -1.
   const svg = document.getElementById('graph-elements');
   const slider = document.getElementById('x-slider');
   const ns = 'http://www.w3.org/2000/svg';
-  const xMin=-1,xMax=7,yMin=-1,yMax=18, left=60, top=72, width=500,height=190;
-  const px = x => left + (x-xMin)*width/(xMax-xMin);
-  const py = y => top+height-(y-yMin)*height/(yMax-yMin);
-  const f = x => (x-3)**2+1;
-  const make = (tag,attrs,text) => {const e=document.createElementNS(ns,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,String(v)));if(text!==undefined)e.textContent=text;svg.append(e);return e;};
-  [0,5,10,15].forEach(y => {make('line',{x1:left,y1:py(y),x2:left+width,y2:py(y),stroke:'#e6ece9','stroke-width':1}); make('text',{x:left-12,y:py(y)+5,'text-anchor':'end','font-size':12,fill:'#70718e'},String(y));});
-  [0,1,2,3,4,5,6].forEach(x => {make('line',{x1:px(x),y1:top,x2:px(x),y2:top+height,stroke:'#edf1ec','stroke-width':1});make('text',{x:px(x),y:py(0)+20,'text-anchor':'middle','font-size':12,fill:'#70718e'},String(x));});
-  make('line',{x1:left,y1:py(0),x2:left+width,y2:py(0),stroke:'#718579','stroke-width':1.4});
-  make('line',{x1:px(0),y1:top,x2:px(0),y2:top+height,stroke:'#718579','stroke-width':1.4});
-  make('text',{x:width+left+8,y:py(0)+4,'font-size':12,fill:'#51675f'},'x');
-  const d = Array.from({length:161},(_,i)=>{const x=xMin+i*(xMax-xMin)/160;return `${i?'L':'M'} ${px(x).toFixed(2)} ${py(f(x)).toFixed(2)}`;}).join(' ');
-  make('path',{d,fill:'none',stroke:'#6a50b8','stroke-width':3.5,'stroke-linecap':'round','stroke-linejoin':'round'});
-  make('circle',{cx:px(3),cy:py(1),r:5.5,fill:'#d28b36',stroke:'white','stroke-width':2});
-  make('text',{x:px(3)+12,y:py(1)-11,'font-size':13,fill:'#835917','font-weight':'700'},'S(3 ; 1)');
-  const dot=make('circle',{cx:px(3),cy:py(1),r:8,fill:'#d75e78',stroke:'white','stroke-width':3});
-  const fmt=x=>Number(x).toLocaleString('fr-FR',{maximumFractionDigits:2});
-  function setDot() {
-    const x=Number(slider.value), y=f(x);
-    dot.setAttribute('cx',px(x));dot.setAttribute('cy',py(y));
-    document.getElementById('x-value').textContent='x = '+fmt(x);
-    const variation = x < 3 ? ' : avant le sommet, la fonction décroît quand x augmente.' : x > 3 ? ' : après le sommet, la fonction croît quand x augmente.' : ' : c’est le minimum ; la fonction change de sens de variation.';
-    document.getElementById('graph-readout').textContent=`Pour x = ${fmt(x)}, P(x) = ${fmt(y)}${variation}`;
+  const left = 60, top = 72, width = 500, height = 190, xMin = -1, xMax = 7;
+  const px = x => left + (x - xMin) * width / (xMax - xMin);
+  const fmt = x => Number(x).toLocaleString('fr-FR', {maximumFractionDigits:2});
+  let a = 1, py, dot;
+  const f = x => a * (x - 3) ** 2 + 1;
+  function make(tag, attrs, text) {
+    const e = document.createElementNS(ns, tag);
+    Object.entries(attrs).forEach(([k,v]) => e.setAttribute(k,String(v)));
+    if (text !== undefined) e.textContent = text;
+    svg.append(e); return e;
   }
-  slider.addEventListener('input',setDot); setDot();
+  function setDot() {
+    const x = Number(slider.value), y = f(x);
+    dot.setAttribute('cx', px(x)); dot.setAttribute('cy', py(y));
+    document.getElementById('x-value').textContent = 'x = ' + fmt(x);
+    const desc = x === 3 ? (a > 0 ? 'minimum' : 'maximum')
+      : (a > 0) === (x > 3) ? 'la fonction croît' : 'la fonction décroît';
+    document.getElementById('graph-readout').textContent =
+      'Pour x = ' + fmt(x) + ', P(x) = ' + fmt(y) + ' : ' + desc + '.';
+  }
+  function renderGraph() {
+    const dark = document.documentElement.classList.contains('dark');
+    const low = a > 0 ? -1 : -18, high = a > 0 ? 18 : 3;
+    py = y => top + height - (y - low) * height / (high - low);
+    const grid = dark ? '#455271' : '#e4e8f2';
+    const labels = dark ? '#d2d9f0' : '#70718e';
+    const axis = dark ? '#adb9d7' : '#718579';
+    svg.replaceChildren();
+    const ticks = a > 0 ? [0,5,10,15] : [-15,-10,-5,0];
+    ticks.forEach(y => {
+      make('line',{x1:left,y1:py(y),x2:left+width,y2:py(y),stroke:grid,'stroke-width':1});
+      make('text',{x:left-12,y:py(y)+5,'text-anchor':'end','font-size':12,fill:labels},String(y));
+    });
+    [0,1,2,3,4,5,6].forEach(x => {
+      make('line',{x1:px(x),y1:top,x2:px(x),y2:top+height,stroke:grid,'stroke-width':1});
+      make('text',{x:px(x),y:py(0)+18,'text-anchor':'middle','font-size':12,fill:labels},String(x));
+    });
+    make('line',{x1:left,y1:py(0),x2:left+width,y2:py(0),stroke:axis,'stroke-width':1.4});
+    make('line',{x1:px(0),y1:top,x2:px(0),y2:top+height,stroke:axis,'stroke-width':1.4});
+    make('text',{x:left+width+8,y:py(0)+4,'font-size':12,fill:labels},'x');
+    const path = Array.from({length:161},(_,i) => {
+      const x = xMin + i * (xMax - xMin) / 160;
+      return (i ? 'L ' : 'M ') + px(x).toFixed(2) + ' ' + py(f(x)).toFixed(2);
+    }).join(' ');
+    make('path',{d:path,fill:'none',stroke:a>0?'#7856dd':'#e27c8e','stroke-width':3.5});
+    make('circle',{cx:px(3),cy:py(1),r:5.5,fill:'#e0a341',stroke:dark?'#222841':'white','stroke-width':2});
+    make('text',{x:px(3)+12,y:py(1)+(a>0?-11:22),'font-size':13,fill:dark?'#ffdda8':'#835917','font-weight':700},'S(3 ; 1)');
+    dot = make('circle',{cx:px(3),cy:py(1),r:8,fill:a>0?'#7856dd':'#d75e78',stroke:dark?'#222841':'white','stroke-width':3});
+    document.getElementById('graph-title').textContent = a>0 ? 'P(x) = (x − 3)² + 1' : 'P(x) = −(x − 3)² + 1';
+    document.getElementById('graph-subtitle').textContent = a>0 ? 'Décroît puis croît : minimum en S(3 ; 1).' : 'Croît puis décroît : maximum en S(3 ; 1).';
+    document.querySelectorAll('#parabola > text').forEach(e => e.setAttribute('fill',labels));
+    document.getElementById('graph-explainer').textContent = a > 0 ? 'a = +1 : minimum.' : 'a = −1 : maximum.';
+    document.querySelectorAll('.sign-button').forEach(b => b.setAttribute('aria-pressed', String(Number(b.dataset.a) === a)));
+    setDot();
+  }
+  slider.addEventListener('input',setDot);
+  document.querySelectorAll('.sign-button').forEach(btn => btn.addEventListener('click', () => { a = Number(btn.dataset.a); renderGraph(); }));
+  renderGraph();
+
 })();
 </script>
 </body>
