@@ -201,6 +201,12 @@
     .closing .small-card:last-child {background:linear-gradient(155deg,#fff7f0,#fff 60%);border-color:#f1e0d6;}
     .reset {color:#4b4c9b;}
     @media (prefers-reduced-motion:reduce) { .hero::before {opacity:.2;} }
+    /* Compteur global : badge SVG externe sans script de suivi. */
+    .visit-counter {display:flex;align-items:center;gap:10px 12px;flex-wrap:wrap;width:fit-content;max-width:100%;margin-top:18px;padding:10px 13px;background:rgba(255,255,255,.86);border:1px solid #d9d6ed;border-radius:14px;box-shadow:0 6px 18px rgba(65,53,125,.07);}
+    .visit-counter-icon {display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;border-radius:9px;background:#ece7ff;color:#5f479f;font-weight:850;}
+    .visit-counter img {display:block;width:auto;height:20px;min-width:64px;max-width:160px;}
+    .visit-counter-caption {font-size:.75rem;line-height:1.35;color:#65627c;max-width:235px;}
+    @media (max-width:640px) {.visit-counter {gap:9px;}.visit-counter-caption{flex-basis:100%;max-width:none;}}
     @media (max-width:890px) {.hero-grid{grid-template-columns:1fr;gap:30px}.visual-card{display:none}.module{grid-template-columns:1fr}.routes{gap:10px}.route{padding:19px;min-height:185px}}
     @media (max-width:640px) {.container{width:min(100% - 30px,1110px)}.hero{padding:50px 0}.bar{min-height:62px}.brand{font-size:.99rem}.brand-mark{width:30px;height:30px}.meta{display:none}.top-link{padding:7px 11px;font-size:.79rem}.routes,.closing,.takeaway{grid-template-columns:1fr}.route{min-height:unset}.section-top{align-items:start;flex-direction:column}.panel{padding:22px}.takeaway{padding:26px 22px}.formula-block{font-size:1.16rem}.hero-actions .button{width:100%}}
     @media (prefers-reduced-motion:reduce) {html{scroll-behavior:auto}.route{transition:none}}
@@ -224,6 +230,11 @@
       <p class="lead">Une formule te bloque ? Tu confonds racine, sommet et signe ? Choisis le point qui coince, regarde un exemple, puis essaie à ton rythme.</p>
       <div class="hero-actions"><a class="button button-primary" href="#choisir">Je choisis ma difficulté <span aria-hidden="true">→</span></a><a class="button button-secondary" href="#methode">Voir la méthode</a></div>
       <p class="hero-note">10 minutes pour commencer · Sans note, sans compte, sans pression.</p>
+      <div class="visit-counter" aria-label="Compteur de visites du site">
+        <span class="visit-counter-icon" aria-hidden="true">↗</span>
+        <img src="https://hits.sh/hectorb-max.github.io/atelier-second-degre-1re.svg?label=Visites&amp;color=6851b5&amp;labelColor=303157&amp;style=flat-square" alt="Nombre de visites enregistrées depuis l’installation du compteur" height="20" loading="eager" decoding="async" referrerpolicy="no-referrer">
+        <span class="visit-counter-caption">Affichages de la page, pas visiteurs uniques.</span>
+      </div>
     </div>
     <div class="visual-card" aria-hidden="true">
       <div class="top"><span>Dans le carnet de maths</span><span>01 / 03</span></div>
