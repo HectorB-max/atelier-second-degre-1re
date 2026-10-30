@@ -6,14 +6,15 @@ Site pédagogique de remédiation sur les polynômes du second degré.
 
 - Trois ateliers : racines, forme canonique (sommet, extremum et sens de variation) et signe.
 - Étude du signe d'un trinôme pour Δ < 0, Δ = 0 et Δ > 0, avant les inéquations.
-- Dix questions interactives avec retours explicatifs, dont six consacrées aux variations (trois avec coefficients uniquement négatifs).
+- Vingt-six questions interactives avec retours explicatifs, dont six consacrées aux variations (trois avec coefficients uniquement négatifs), treize questions supplémentaires réparties entre les trois ateliers et trois exercices de bilan transversal. Le compteur indique le nombre de questions validées sur 26.
 - Parabole interactive : curseur et choix entre a = +1 et a = −1 pour inverser le sens des variations.
 - Laboratoire autonome permettant de faire varier les coefficients a, b et c, de suivre le discriminant, les racines et le sommet.
 - Deuxième laboratoire indépendant : curseur continu pour a de −3 à +3, avec b = 0 et c = 1 fixes ; le passage par a = 0 montre la disparition du terme quadratique.
 - Tableau de synthèse transposé : signe de a en lignes, signe de Δ en colonnes, six courbes, signes, variations, factorisations et deux équivalences d'inéquation par cas.
 - Huit tableaux de variations SVG inspirés de tkz-tab (six dans la synthèse et deux exemples dans l'atelier forme canonique), adaptés automatiquement aux thèmes clair/sombre.
 - Six tableaux de signes SVG dans la synthèse, avec Sg(a), −Sg(a), zéros aux racines et rappel de a > 0 ou a < 0 ; aucune expression mathématique ne se coupe.
-- Comparatif des trois formes du trinôme, avec indication des conditions de factorisation réelle.
+- Comparatif des trois formes du trinôme, avec indication des conditions de factorisation réelle. Formules de racines et d'abscisse du sommet affichées avec une véritable barre de fraction (fraction typographique CSS), jamais un « / » mathématique visible.
+- Bilan pédagogique restructuré autour des trois questions directrices et d'un QCM à réponses multiples, sans ancienne numérotation « question 10 sur 10 ».
 - Mode sombre activable et mémorisé localement dans le navigateur.
 - Sans compte élève, sans notation et sans collecte de réponses. Progression enregistrée dans le navigateur.
 
@@ -42,7 +43,7 @@ Adaptation de ressources du professeur : *Fonctions polynômes du second degré*
 
 ## Maintenance
 
-Les fichiers HTML, CSS et JavaScript sont autonomes, sans étape de compilation : `index.html`, `refonte.css`, `refonte-tableaux.js`, `variations-svg.js`, `signes-svg.js`, `refonte-explorateur.js` et `applet-a-curseur.js`. Le rendu SVG s'inspire de `tkz-tab` sans nécessiter LaTeX au moment de l'affichage ; un prototype `tkz-tab` a été compilé pour comparaison.
+Les fichiers HTML, CSS et JavaScript sont autonomes, sans étape de compilation : `index.html`, `refonte.css`, `refonte-tableaux.js`, `variations-svg.js`, `signes-svg.js`, `refonte-explorateur.js` et `applet-a-curseur.js` et `exercices-complementaires.js`. Le rendu SVG s'inspire de `tkz-tab` sans nécessiter LaTeX au moment de l'affichage ; un prototype `tkz-tab` a été compilé pour comparaison.
 
 Travailler d'abord sur une branche de développement, tester depuis la Tour Ubuntu avec un serveur HTTP local (par exemple `python3 -m http.server 8877 --bind 127.0.0.1`) et vérifier l'affichage mobile, les dix questions et les six configurations. Publier ensuite sur `main` et contrôler GitHub Pages.
 

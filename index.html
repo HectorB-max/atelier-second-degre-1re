@@ -317,7 +317,7 @@
 </section>
 <main id="contenu" class="container">
   <section id="choisir" aria-labelledby="choose-heading">
-    <div class="section-top"><div><p class="eyebrow">À toi de choisir</p><h2 id="choose-heading">Racines, sommet, signe : quelle information chercher ?</h2><p class="section-desc">Trois questions, trois points de vue complémentaires. Choisis celle qui t'intéresse : chaque atelier commence par une explication, puis te laisse essayer.</p></div><div class="progress-pill" id="progress-pill" aria-live="polite">0 / 10 questions débloquées</div></div>
+    <div class="section-top"><div><p class="eyebrow">À toi de choisir</p><h2 id="choose-heading">Racines, sommet, signe : quelle information chercher ?</h2><p class="section-desc">Trois questions, trois points de vue complémentaires. Choisis celle qui t'intéresse : chaque atelier commence par une explication, puis te laisse essayer.</p></div><div class="progress-pill" id="progress-pill" aria-live="polite">0 question validée</div></div>
     <nav class="routes" aria-label="Choisir un atelier">
       <a class="route" href="#racines"><span class="route-icon" aria-hidden="true">01</span><strong class="route-question">Où la fonction s’annule-t-elle ?</strong><span class="route-topic">Trouver les racines</span></a>
       <a class="route" href="#canonique"><span class="route-icon" aria-hidden="true">02</span><strong class="route-question">Où atteint-elle son minimum ou son maximum ?</strong><span class="route-topic">Comprendre la forme canonique</span></a>
@@ -342,7 +342,7 @@
       <div class="example"><strong>À retenir</strong><p>Pour résoudre une équation produit nul, on annule séparément les facteurs. On ne divise pas par <span class="math">x</span> sans vérifier qu'il est non nul : on risquerait de perdre la racine 0.</p></div>
     </article>
     <div class="panel right-panel">
-      <p class="question-kicker">À ton tour · 1 question</p>
+      <p class="question-kicker">À ton tour · Racines</p>
       <h3>Reconnais les racines</h3>
       <p class="question-statement">Quelles sont les racines de <span class="math">P(x) = x² − 9x + 20</span> ?</p>
       <div class="answers" role="group" aria-label="Choisis une réponse à la question sur les racines" data-single="racines">
@@ -359,8 +359,8 @@
     <div class="deep-heading"><p class="eyebrow">01 · Comprendre, deuxième regard</p><h3 id="discriminant-title">Et si je ne vois aucune factorisation ?</h3><p>Avec <span class="math">P(x)=ax²+bx+c</span> (<span class="math">a ≠ 0</span>), on peut toujours <strong>calculer le discriminant</strong>. Il permet de savoir combien il existe de racines réelles, puis de les calculer lorsqu'elles existent. Cette méthode ne dépend pas d’une factorisation « devinée ».</p></div>
     <div class="formula-block">Δ = b² − 4ac</div>
     <div class="root-grid">
-      <article class="root-case"><span class="case-tag">Δ &gt; 0</span><h4>Deux racines distinctes</h4><p>Le polynôme s'annule deux fois :</p><p class="math centered">x₁ = (−b − √Δ)/(2a) ; x₂ = (−b + √Δ)/(2a)</p><p><strong>Exemple :</strong> <span class="math">x² − 5x + 6</span> : <span class="math">Δ = 1</span>, racines <span class="math">2</span> et <span class="math">3</span>.</p></article>
-      <article class="root-case"><span class="case-tag">Δ = 0</span><h4>Une racine double</h4><p>La parabole touche l'axe horizontal en un point :</p><p class="math centered">x₀ = −b/(2a)</p><p><strong>Exemple :</strong> <span class="math">x² + 2x + 1</span> : <span class="math">Δ = 0</span>, racine double <span class="math">−1</span>.</p></article>
+      <article class="root-case"><span class="case-tag">Δ &gt; 0</span><h4>Deux racines distinctes</h4><p>Le polynôme s'annule deux fois :</p><p class="math centered">x₁ = <span class="math-frac" role="math" aria-label="−b − √Δ sur 2a"><span class="math-frac-top">−b − √Δ</span><span class="math-frac-bottom">2a</span></span> ; x₂ = <span class="math-frac" role="math" aria-label="−b + √Δ sur 2a"><span class="math-frac-top">−b + √Δ</span><span class="math-frac-bottom">2a</span></span></p><p><strong>Exemple :</strong> <span class="math">x² − 5x + 6</span> : <span class="math">Δ = 1</span>, racines <span class="math">2</span> et <span class="math">3</span>.</p></article>
+      <article class="root-case"><span class="case-tag">Δ = 0</span><h4>Une racine double</h4><p>La parabole touche l'axe horizontal en un point :</p><p class="math centered">x₀ = <span class="math-frac" role="math" aria-label="−b sur 2a"><span class="math-frac-top">−b</span><span class="math-frac-bottom">2a</span></span></p><p><strong>Exemple :</strong> <span class="math">x² + 2x + 1</span> : <span class="math">Δ = 0</span>, racine double <span class="math">−1</span>.</p></article>
       <article class="root-case"><span class="case-tag">Δ &lt; 0</span><h4>Aucune racine réelle</h4><p>La parabole ne rencontre pas l'axe horizontal : l'équation <span class="math">P(x) = 0</span> n'a pas de solution dans ℝ.</p><p><strong>Exemple :</strong> <span class="math">x² + 2x + 5</span> : <span class="math">Δ = −16</span>, aucune racine réelle.</p></article>
     </div>
     <p class="keyline"><strong>À retenir :</strong> le discriminant sert d'abord à <strong>chercher les racines</strong> ; nous le retrouverons ensuite pour étudier le signe du trinôme.</p>
@@ -416,7 +416,7 @@
       </div>
     </article>
     <div class="panel right-panel">
-      <p class="question-kicker">À ton tour · 1 question</p>
+      <p class="question-kicker">À ton tour · Forme canonique</p>
       <h3>Choisis la bonne forme</h3>
       <p class="question-statement">Quelle est la forme canonique de <span class="math">Q(x) = 2x² + 8x + 3</span> ?</p>
       <div class="answers" role="group" aria-label="Choisis une forme canonique" data-single="canonique">
@@ -474,7 +474,7 @@
       <div class="formula-block">Δ = b² − 4ac</div>
       <div class="sign-cases">
         <div class="sign-case"><strong>Δ &lt; 0 : aucune racine réelle</strong><p>Le trinôme garde le <strong>signe de a</strong> sur ℝ.</p></div>
-        <div class="sign-case"><strong>Δ = 0 : une racine double</strong><p>Le trinôme vaut 0 en <span class="math">−b/(2a)</span> et garde le <strong>signe de a</strong> ailleurs.</p></div>
+        <div class="sign-case"><strong>Δ = 0 : une racine double</strong><p>Le trinôme vaut 0 en <span class="math"> <span class="math-frac" role="math" aria-label="−b sur 2a"><span class="math-frac-top">−b</span><span class="math-frac-bottom">2a</span></span> </span> et garde le <strong>signe de a</strong> ailleurs.</p></div>
         <div class="sign-case"><strong>Δ &gt; 0 : deux racines distinctes</strong><p>Il a le <strong>signe de a à l’extérieur</strong> des deux racines, et le <strong>signe opposé entre elles</strong>. Il s’annule aux racines.</p></div>
       </div>
       <div class="example"><strong>Sans racine, mais avec un signe !</strong><p><span class="math">x² − 6x + 10 = (x − 3)² + 1 &gt; 0</span> pour tout réel : ici <span class="math">Δ = −4</span> et <span class="math">a = 1 &gt; 0</span>.</p></div>
@@ -483,7 +483,7 @@
       <div class="example"><strong>Attention aux bornes</strong><p>« ≤ » et « ≥ » incluent les racines ; « &lt; » et « &gt; » les excluent. Si <span class="math">a &lt; 0</span>, les signes sont inversés.</p></div>
     </article>
     <div class="panel right-panel">
-      <p class="question-kicker">À ton tour · 1 question</p>
+      <p class="question-kicker">À ton tour · Signe et inéquations</p>
       <h3>Attention au signe « − »</h3>
       <p class="question-statement">Résous <span class="math">−3(x − 1)(x + 4) &lt; 0</span>.</p>
       <div class="answers" role="group" aria-label="Choisis un ensemble de solutions" data-single="signe">
@@ -496,13 +496,34 @@
     </div>
   </section>
 
-  <section class="takeaway" id="methode" aria-labelledby="m-title">
-    <div><p class="eyebrow" style="color:#d5c5ff">Pour faire le point</p><h2 id="m-title">Trois réflexes utiles</h2><p>Il ne s'agit pas d'apprendre trois recettes indépendantes : les racines, la forme canonique et le signe donnent trois regards complémentaires sur un même polynôme.</p></div>
-    <div class="note"><strong>À quelle question répond chaque outil ?</strong><span>Racines → Où <span class="math">P(x) = 0</span> ?<br>Forme canonique → Où se situe le sommet, et comment la fonction varie-t-elle ?<br>Signe → Où <span class="math">P(x)</span> est-il positif ou négatif ?</span></div>
+  <section class="takeaway takeaway-refonte" id="methode" aria-labelledby="m-title">
+    <div class="takeaway-heading">
+      <p class="eyebrow">Pour faire le point · Le bon outil pour la bonne question</p>
+      <h2 id="m-title">Trois questions, trois réflexes… et un seul polynôme</h2>
+      <p>Je ne commence pas toujours par le discriminant ni toujours par le sommet : je choisis l’écriture qui répond à la question posée. Les trois ateliers se complètent.</p>
+    </div>
+    <div class="takeaway-paths">
+      <article class="takeaway-path"><span class="takeaway-num">01 · RACINES</span>
+        <h3>Où la fonction s’annule-t-elle ?</h3>
+        <p>Je résous <span class="math">P(x) = 0</span>. Si le produit nul n’est pas évident, je calcule <span class="math">Δ</span> pour connaître le nombre de racines et les déterminer.</p>
+        <a href="#racines">Revoir la recherche des racines ↗</a>
+      </article>
+      <article class="takeaway-path"><span class="takeaway-num">02 · SOMMET</span>
+        <h3>Où atteint-elle un minimum ou un maximum ?</h3>
+        <p>Je privilégie <span class="math">a(x − α)² + β</span> pour lire le sommet, l’extremum et les variations. Le signe de <span class="math">a</span> donne le sens des flèches.</p>
+        <a href="#canonique">Revoir la forme canonique ↗</a>
+      </article>
+      <article class="takeaway-path"><span class="takeaway-num">03 · SIGNE</span>
+        <h3>Où est-elle positive, négative ou nulle ?</h3>
+        <p>J’utilise le signe de <span class="math">a</span> et le discriminant ; je place les racines dans un tableau de signes, puis je retiens les intervalles qui répondent à l’inéquation.</p>
+        <a href="#signe">Revoir l’étude du signe ↗</a>
+      </article>
+    </div>
+    <p class="takeaway-conclusion"><strong>La méthode :</strong> identifier la question → choisir la forme utile → expliquer le résultat. Les trois écritures décrivent <strong>le même trinôme</strong>.</p>
   </section>
 
   <section class="closing" aria-label="Pour aller un peu plus loin">
-    <article class="small-card"><p class="question-kicker">QCM de synthèse · Question 10 sur 10</p><h3>Une ou deux propositions exactes ?</h3><p>Pour <span class="math">P(x) = x² − 6x + 10</span>, coche <strong>toutes les propositions vraies</strong>.</p>
+    <article class="small-card"><p class="question-kicker">Bilan croisé · Plusieurs réponses possibles</p><h3>Quelles affirmations sont exactes ?</h3><p>Pour <span class="math">P(x) = x² − 6x + 10</span>, coche <strong>toutes les propositions vraies</strong>.</p>
       <fieldset class="multi-list" id="multi-question"><legend class="muted">Plusieurs réponses peuvent être exactes.</legend>
         <label class="check-option"><input type="checkbox" value="a"><span>Le discriminant vaut −4.</span></label>
         <label class="check-option"><input type="checkbox" value="b"><span><span class="math">P(x) = (x − 3)² + 1</span>.</span></label>
@@ -515,6 +536,7 @@
   </section>
 </main>
 <footer><div class="container footer-grid"><span>Maths · Première spécialité · Atelier d'aide sur le second degré</span><span>Pas de note ni de transmission de réponses. <button type="button" class="reset" id="reset-progress">Effacer ma progression locale</button></span></div></footer>
+<script src="exercices-complementaires.js"></script>
 <script>
 (() => {
   'use strict';
@@ -562,7 +584,7 @@
   applyTheme(theme);
   themeButton.addEventListener('click', () => applyTheme(theme === 'dark' ? 'light' : 'dark', true));
   const STORAGE = 'atelier-second-degre-1re-v1';
-  const correct = { racines:'a',canonique:'b',signe:'a',var1:'a',var2:'b',var3:'b',var4:'a',var5:'b',var6:'c' };
+  const correct = { racines:'a',canonique:'b',signe:'a',var1:'a',var2:'b',var3:'b',var4:'a',var5:'b',var6:'c',...(window.SUPPLEMENTAL_CORRECT||{}) };
   const responses = {
     racines: {
       a: ['Oui, les deux racines sont 4 et 5.', 'En effet, (x − 4)(x − 5) = x² − 9x + 20. Donc P(x) = 0 exactement pour x = 4 ou x = 5.'],
@@ -611,13 +633,15 @@
     }
   };
 
+  Object.assign(responses,window.SUPPLEMENTAL_RESPONSES||{});
   let unlocked = {};
   try { unlocked = JSON.parse(localStorage.getItem(STORAGE) || '{}') || {}; }
   catch { unlocked = {}; }
   const save = () => { try { localStorage.setItem(STORAGE, JSON.stringify(unlocked)); } catch {} };
   const updateProgress = () => {
-    const count = ['racines','canonique','signe','multi','var1','var2','var3','var4','var5','var6'].filter(k => unlocked[k]).length;
-    document.getElementById('progress-pill').textContent = `${count} / 10 questions débloquées`;
+    const totalKeys = [...Object.keys(correct),'multi'];
+    const count = totalKeys.filter(k => unlocked[k]).length;
+    document.getElementById('progress-pill').textContent = `${count} question${count > 1 ? 's' : ''} validée${count > 1 ? 's' : ''} sur ${totalKeys.length}`;
   };
   function showFeedback(id, ok, heading, content, kind) {
     const el = document.getElementById('feedback-' + id);

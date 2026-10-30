@@ -39,7 +39,7 @@ matrix.innerHTML='<p class="eyebrow">Pour faire le point · Le second degré</p>
 [1,-1].map(a=>'<tr><th scope="row" class="matrix-row-label">a '+(a>0?'&gt;':'&lt;')+' 0<small>'+(a>0?'Vers le haut':'Vers le bas')+'</small></th>'+
 [-1,0,1].map(v=>'<td>'+caseHtml(a,v)+'</td>').join('')+'</tr>').join('')+
 '</tbody></table></div>'+
-'<p class="matrix-foot">On note <span class="math">S(α ; β)</span> le sommet, avec <span class="math">α = −b/(2a)</span> et <span class="math">β = P(α)</span>. La forme factorisée réelle n’existe que lorsque <span class="math">Δ ≥ 0</span>.</p>';
+'<p class="matrix-foot">On note <span class="math">S(α ; β)</span> le sommet, avec <span class="math">α = <span class="math-frac" role="math" aria-label="moins b sur deux a"><span class="math-frac-top">−b</span><span class="math-frac-bottom">2a</span></span></span> et <span class="math">β = P(α)</span>. La forme factorisée réelle n’existe que lorsque <span class="math">Δ ≥ 0</span>.</p>';
 const forms=document.createElement('section');
 forms.id='trois-formes';forms.className='forms-overview';
 forms.innerHTML='<p class="eyebrow">Trois écritures · Trois usages</p><h2>Quelle forme est la plus utile ?</h2>'+
