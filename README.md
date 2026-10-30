@@ -9,7 +9,9 @@ Site pédagogique de remédiation sur les polynômes du second degré.
 - Dix questions interactives avec retours explicatifs, dont six consacrées aux variations (trois avec coefficients uniquement négatifs).
 - Parabole interactive : curseur et choix entre a = +1 et a = −1 pour inverser le sens des variations.
 - Laboratoire autonome permettant de faire varier les coefficients a, b et c, de suivre le discriminant, les racines et le sommet.
+- Deuxième laboratoire indépendant : curseur continu pour a de −3 à +3, avec b = 0 et c = 1 fixes ; le passage par a = 0 montre la disparition du terme quadratique.
 - Tableau de synthèse transposé : signe de a en lignes, signe de Δ en colonnes, six courbes, signes, variations, factorisations et deux équivalences d'inéquation par cas.
+- Sept tableaux de variations SVG inspirés de tkz-tab, adaptés automatiquement aux thèmes clair/sombre, et expressions mathématiques maintenues sans coupures.
 - Comparatif des trois formes du trinôme, avec indication des conditions de factorisation réelle.
 - Mode sombre activable et mémorisé localement dans le navigateur.
 - Sans compte élève, sans notation et sans collecte de réponses. Progression enregistrée dans le navigateur.
@@ -39,7 +41,7 @@ Adaptation de ressources du professeur : *Fonctions polynômes du second degré*
 
 ## Maintenance
 
-Les fichiers HTML, CSS et JavaScript sont autonomes, sans étape de compilation : `index.html`, `refonte.css`, `refonte-tableaux.js` et `refonte-explorateur.js`.
+Les fichiers HTML, CSS et JavaScript sont autonomes, sans étape de compilation : `index.html`, `refonte.css`, `refonte-tableaux.js`, `variations-svg.js`, `refonte-explorateur.js` et `applet-a-curseur.js`. Le rendu SVG s'inspire de `tkz-tab` sans nécessiter LaTeX au moment de l'affichage ; un prototype `tkz-tab` a été compilé pour comparaison.
 
 Travailler d'abord sur une branche de développement, tester depuis la Tour Ubuntu avec un serveur HTTP local (par exemple `python3 -m http.server 8877 --bind 127.0.0.1`) et vérifier l'affichage mobile, les dix questions et les six configurations. Publier ensuite sur `main` et contrôler GitHub Pages.
 

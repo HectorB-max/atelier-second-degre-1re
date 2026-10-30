@@ -3,8 +3,8 @@
 'use strict';
 const signs=d=>d<0?['Sg(a)']:d===0?['Sg(a)','0','Sg(a)']:['Sg(a)','0','−Sg(a)','0','Sg(a)'];
 const xheads=d=>d<0?['ℝ']:d===0?['x < x₀','x₀','x > x₀']:['x < x₁','x₁','x₁ < x < x₂','x₂','x > x₂'];
-const cells=a=>a.map(v=>'<td>'+v+'</td>').join('');
-const signTable=(a,d)=>'<table class="sign-mini"><tbody><tr><th>x</th>'+cells(xheads(d))+'</tr><tr><th>P(x)<small>a '+(a>0?'&gt;':'&lt;')+' 0</small></th>'+cells(signs(d))+'</tr></tbody></table>';
+const cells=a=>a.map(v=>'<td><span class="math-nowrap">'+v+'</span></td>').join('');
+const signTable=(a,d)=>'<div class="sign-mini-scroll" role="region" aria-label="Tableau de signes défilable"><table class="sign-mini"><tbody><tr><th>x</th>'+cells(xheads(d))+'</tr><tr><th>P(x)<small>a '+(a>0?'&gt;':'&lt;')+' 0</small></th>'+cells(signs(d))+'</tr></tbody></table></div>';
 const varTable=a=>'<table class="var-mini"><tbody><tr><th>x</th><td>−∞</td><td></td><td>α</td><td></td><td>+∞</td></tr><tr><th>P(x)</th><td></td><td class="var-arrow">'+(a>0?'↘':'↗')+'</td><td class="var-extreme"><b>β</b><small>'+(a>0?'min.':'max.')+'</small></td><td class="var-arrow">'+(a>0?'↗':'↘')+'</td><td></td></tr></tbody></table>';
 function curve(a,d){
  const c=d<0?a:d===0?0:-a;
@@ -27,7 +27,7 @@ function caseHtml(a,d){
  '<p class="matrix-ineq">P(x) &gt; 0 ⇔ '+eq[0]+'</p><p class="matrix-ineq">P(x) &lt; 0 ⇔ '+eq[1]+'</p>'+
  '<h4>Tableau de signes</h4>'+signTable(a,d)+
  '<h4>Variations</h4>'+varTable(a)+
- '<p class="matrix-factor">'+factor+'</p></div>';
+ '<p class="matrix-factor">'+(factor.startsWith('P(x)')?'<span class="math-nowrap">'+factor+'</span>':factor)+'</p></div>';
 }
 const matrix=document.createElement('section');
 matrix.id='tableau-synthese';matrix.className='matrix-section';
@@ -47,7 +47,7 @@ forms.innerHTML='<p class="eyebrow">Trois écritures · Trois usages</p><h2>Quel
 '<div class="forms-grid">'+
 '<article><h3>Forme développée</h3><p class="math formula-nowrap">ax² + bx + c</p><p><b>Toujours disponible.</b> On repère les coefficients, on calcule le discriminant et on cherche les racines.</p></article>'+
 '<article><h3>Forme canonique</h3><p class="math formula-nowrap">a(x − α)² + β</p><p><b>Toujours disponible.</b> On lit le sommet, l’extremum et les variations.</p></article>'+
-'<article><h3>Forme factorisée réelle</h3><p class="math formula-nowrap">a(x − x₁)(x − x₂)</p><p><b>Si Δ ≥ 0.</b> Elle permet de lire les racines et de déterminer le signe. Pour Δ = 0, on écrit a(x − x₀)².</p></article>'+
+'<article><h3>Forme factorisée réelle</h3><p class="math formula-nowrap">a(x − x₁)(x − x₂)</p><p><b>Si Δ ≥ 0.</b> Elle permet de lire les racines et de déterminer le signe. Pour Δ = 0, on écrit <span class="math-nowrap">a(x − x₀)²</span>.</p></article>'+
 '</div><p class="form-note"><b>Si Δ &lt; 0</b>, aucune factorisation en facteurs réels du premier degré n’existe. Les deux autres formes restent disponibles.</p>';
 const anchor=document.getElementById('methode');
 if(anchor)anchor.before(matrix,forms);
