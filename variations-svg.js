@@ -36,6 +36,7 @@ function diagram({up,label,extremum,alpha='α',name='P(x)'}) {
   text(200,up?88:134,label,'tkz-text tkz-extremum-caption');
   return svg;
 }
+window.secondDegreVariationSVG = diagram;
 document.querySelectorAll('.var-mini').forEach((table,i)=>{
   const row=i>=3?-1:1;
   table.replaceWith(diagram({up:row<0,label:row<0?'max':'min',extremum:'β'}));

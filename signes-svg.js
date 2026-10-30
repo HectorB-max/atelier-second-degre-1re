@@ -46,6 +46,7 @@ function signDiagram(a,delta) {
  }
  return svg;
 }
+window.secondDegreSigneSVG = signDiagram;
 document.querySelectorAll('.six-matrix > tbody > tr').forEach((tr,row)=>{
  const a=row===0?1:-1;
  [...tr.children].filter(e=>e.tagName==='TD').forEach((td,col)=>{

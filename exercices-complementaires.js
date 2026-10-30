@@ -7,10 +7,10 @@ why:'Le discriminant vaut 16 − 28 = −12 : il est négatif, donc aucune racin
 wrong:['Un discriminant négatif interdit deux racines réelles.','Il y a une racine double seulement si le discriminant est nul.']},
 { id:'rac3',part:'racines',title:'Une racine double',q:'Résous <span class="math">x² − 6x + 9 = 0</span>.',opt:['Une seule racine réelle : 3, double.','Deux racines distinctes : −3 et 3.','Aucune racine réelle.'],right:'a',
 why:'Le discriminant est nul et x² − 6x + 9 = (x − 3)². La seule racine est 3, de multiplicité deux.',
-wrong:['Les nombres −3 et 3 ne sont pas des racines de cette expression.','Le carré (x − 3)² s’annule bien pour x = 3.']},
+wrong:['Le nombre 3 est bien racine, mais −3 ne l’est pas : en remplaçant x par −3, on obtient 36, et non 0.','Le carré (x − 3)² s’annule bien pour x = 3.']},
 { id:'rac4',part:'racines',title:'Deux racines',q:'Quelles sont les racines de <span class="math">x² − x − 6</span> ?',opt:['−3 et 2.','−2 et 3.','−1 et 6.'],right:'b',
 why:'On obtient (x + 2)(x − 3) : les racines sont −2 et 3. On pouvait aussi calculer Δ = 25.',
-wrong:['−3 et 2 donnent la mauvaise somme.','−1 et 6 donnent la mauvaise somme et le mauvais produit.']}
+wrong:['−3 et 2 donnent la mauvaise somme.','Le produit convient (−1 × 6 = −6), mais la somme vaut 5 et non 1. Il faut vérifier les deux conditions.']}
 ];
 bank.push(
 { id:'can2',part:'canonique',title:'Sommet ou maximum ?',q:'Pour <span class="math">f(x) = −(x − 2)² + 4</span>, quelle affirmation est correcte ?',opt:['Son minimum est 4.','Son maximum est 4, atteint en 2.','Son maximum est 2, atteint en 4.'],right:'b',
