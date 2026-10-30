@@ -6,8 +6,11 @@ Site pédagogique de remédiation sur les polynômes du second degré.
 
 - Trois ateliers : racines, forme canonique (sommet, extremum et sens de variation) et signe.
 - Étude du signe d'un trinôme pour Δ < 0, Δ = 0 et Δ > 0, avant les inéquations.
-- Sept questions interactives avec retours explicatifs, dont trois consacrées aux variations.
+- Dix questions interactives avec retours explicatifs, dont six consacrées aux variations (trois avec coefficients uniquement négatifs).
 - Parabole interactive : curseur et choix entre a = +1 et a = −1 pour inverser le sens des variations.
+- Laboratoire autonome permettant de faire varier les coefficients a, b et c, de suivre le discriminant, les racines et le sommet.
+- Tableau de synthèse transposé : signe de a en lignes, signe de Δ en colonnes, six courbes, signes, variations, factorisations et deux équivalences d'inéquation par cas.
+- Comparatif des trois formes du trinôme, avec indication des conditions de factorisation réelle.
 - Mode sombre activable et mémorisé localement dans le navigateur.
 - Sans compte élève, sans notation et sans collecte de réponses. Progression enregistrée dans le navigateur.
 
@@ -36,6 +39,8 @@ Adaptation de ressources du professeur : *Fonctions polynômes du second degré*
 
 ## Maintenance
 
-Modifier le fichier `index.html` et publier les modifications sur la branche `main`. Aucun outil de compilation nécessaire.
+Les fichiers HTML, CSS et JavaScript sont autonomes, sans étape de compilation : `index.html`, `refonte.css`, `refonte-tableaux.js` et `refonte-explorateur.js`.
+
+Travailler d'abord sur une branche de développement, tester depuis la Tour Ubuntu avec un serveur HTTP local (par exemple `python3 -m http.server 8877 --bind 127.0.0.1`) et vérifier l'affichage mobile, les dix questions et les six configurations. Publier ensuite sur `main` et contrôler GitHub Pages.
 
 Projet pédagogique expérimental, à tester et améliorer avant diffusion aux élèves.
