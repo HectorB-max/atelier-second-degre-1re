@@ -164,3 +164,16 @@
 .dark .a-slider-control>output,.dark .a-only-readout strong{color:#ddc8ff;}
 @media(max-width:880px){.a-slider-lab{padding:19px}.a-slider-layout{grid-template-columns:1fr;}.a-slider-control{gap:10px}}
 @media(max-width:440px){.a-slider-control>input{order:3;flex-basis:100%;max-width:none}.a-slider-control>button{margin-left:auto}}
+
+/* Tableaux des signes : SVG compatibles avec les tableaux de variations tkz-tab. */
+.tkz-sign{max-width:360px;margin:7px auto 11px;overflow:visible;}
+.tkz-sign .tkz-sign-name{font-size:15px;font-weight:650;}
+.tkz-sign .tkz-sign-condition{font-family:system-ui,sans-serif;font-size:12px;font-weight:750;fill:#7556ad;}
+.tkz-sign .tkz-sign-value{font-family:"Libertinus Math","Cambria Math",Georgia,serif;font-size:16px;font-weight:700;white-space:nowrap;}
+.tkz-sign .tkz-sign-root{stroke:#a8a5bb;stroke-width:1.25;stroke-dasharray:3.5 3;}
+.tkz-sign .tkz-sign-zero{font-family:"Libertinus Math","Cambria Math",Georgia,serif;font-size:18px;font-weight:800;fill:#c35d77;}
+.variation-card .tkz-inspired{max-width:460px;margin:10px auto 15px;}
+.dark .tkz-sign .tkz-sign-condition{fill:#d8c1ff;}
+.dark .tkz-sign .tkz-sign-root{stroke:#918ba9;}
+.dark .tkz-sign .tkz-sign-zero{fill:#ffb2c5;}
+@media(max-width:420px){.tkz-sign .tkz-sign-value{font-size:16px;}}

@@ -42,4 +42,6 @@ document.querySelectorAll('.var-mini').forEach((table,i)=>{
 });
 const sample=document.querySelector('.negative-variation-table table');
 if(sample)sample.replaceWith(diagram({up:true,label:'max',extremum:'5',alpha:'−1',name:'Q(x)'}));
+const initial=document.querySelector('.variation-scheme');
+if(initial)initial.replaceWith(diagram({up:false,label:'min',extremum:'1',alpha:'3',name:'P(x)'}));
 })();
