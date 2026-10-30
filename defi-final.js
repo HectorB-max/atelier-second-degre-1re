@@ -45,8 +45,12 @@ section.innerHTML=`
 </article>
 </div>
 <div class="defi-correction" id="defi-corrige">
-  <div class="defi-correction-title"><span class="defi-correction-icon" aria-hidden="true">▸</span><span>Afficher le corrigé détaillé</span><button type="button" class="defi-correction-toggle" aria-expanded="false" aria-controls="defi-corrige-contenu">— seulement après avoir cherché</button></div>
-  <div class="defi-correction-body" id="defi-corrige-contenu" hidden>
+  <div class="defi-correction-header">
+    <span class="defi-correction-icon" aria-hidden="true">▸</span>
+    <span class="defi-correction-title">Afficher le corrigé détaillé</span>
+    <button type="button" class="defi-correction-toggle" aria-controls="defi-correction-body" aria-expanded="false" aria-label="Afficher le corrigé détaillé — seulement après avoir cherché">— seulement après avoir cherché</button>
+  </div>
+  <div class="defi-correction-body" id="defi-correction-body" hidden>
     <p class="defi-correction-intro">Les trois parties se résolvent avec les outils du chapitre. Il n’est pas nécessaire d’utiliser une calculatrice pour les racines irrationnelles.</p>
     <article class="defi-solution">
       <h3>Corrigé de la partie I — Un trinôme sous trois formes</h3>
@@ -117,14 +121,15 @@ section.innerHTML=`
 `;
 const anchor=document.querySelector('.closing');
 if(anchor)anchor.before(section);
-const toggle=section.querySelector('.defi-correction-toggle');
-const panel=section.querySelector('#defi-corrige-contenu');
-toggle.addEventListener('click',()=>{
- const open=toggle.getAttribute('aria-expanded')!=='true';
- toggle.setAttribute('aria-expanded',String(open));
- toggle.setAttribute('aria-label',open?'Masquer le corrigé détaillé':'Afficher le corrigé détaillé, seulement après avoir cherché');
- panel.hidden=!open;
- section.querySelector('#defi-corrige').classList.toggle('is-open',open);
+const correctionToggle=section.querySelector('.defi-correction-toggle');
+const correctionBody=section.querySelector('#defi-correction-body');
+const correctionPanel=section.querySelector('#defi-corrige');
+correctionToggle.addEventListener('click',()=>{
+ const isOpening=correctionToggle.getAttribute('aria-expanded')!=='true';
+ correctionToggle.setAttribute('aria-expanded',String(isOpening));
+ correctionToggle.setAttribute('aria-label',(isOpening?'Masquer':'Afficher')+' le corrigé détaillé — seulement après avoir cherché');
+ correctionBody.hidden=!isOpening;
+ correctionPanel.classList.toggle('is-open',isOpening);
 });
 if(typeof window.secondDegreVariationSVG==='function'){
  document.getElementById('defi-variation-P').append(window.secondDegreVariationSVG({up:true,label:'max',extremum:'2',alpha:'2',name:'P(x)'}));

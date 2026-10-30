@@ -245,13 +245,15 @@
 .defi-final-foot{font-size:.84rem;text-align:center;color:var(--muted);margin:0;padding:14px 25px 25px}
 
 .defi-correction{margin:13px 38px 20px;border:1px solid #ccb7e1;border-radius:16px;overflow:hidden;background:var(--paper)}
-.defi-correction>summary{display:flex;gap:13px;align-items:center;cursor:pointer;list-style:none;background:#eee8ff;color:#533a86;font-size:1.07rem;font-weight:850;padding:18px 22px;outline-offset:-3px}
-.defi-correction>summary::-webkit-details-marker{display:none}
-.defi-correction>summary:hover{background:#e6dcff}
-.defi-correction>summary small{font-size:.77rem;color:#705d91;font-weight:600;margin-left:auto}
-.defi-correction[open]>summary{border-bottom:1px solid #d6c9e9}
+.defi-correction-header{display:flex;gap:11px;align-items:center;padding:12px 19px;background:#eee8ff;color:#533a86;font-weight:850}
+.defi-correction-title{font-size:1.07rem;line-height:1.4}
+.defi-correction-toggle{margin-left:auto;min-height:44px;padding:9px 11px;border:1px solid transparent;border-radius:9px;background:transparent;color:#614480;font:inherit;font-size:.79rem;font-weight:680;text-align:left;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.defi-correction-toggle:hover{background:#ded0ff;color:#44277e}
+.defi-correction-toggle:focus-visible{outline:3px solid #7151b2;outline-offset:2px}
+.defi-correction.is-open .defi-correction-header{border-bottom:1px solid #d6c9e9}
 .defi-correction-icon{font-size:1.08rem;transition:transform .2s ease}
-.defi-correction[open] .defi-correction-icon{transform:rotate(90deg)}
+.defi-correction.is-open .defi-correction-icon{transform:rotate(90deg)}
+.defi-correction-body[hidden]{display:none}
 .defi-correction-body{padding:10px 27px 28px}
 .defi-correction-intro{color:var(--muted);font-style:italic;font-size:.9rem;margin:20px 0 0}
 .defi-solution{padding:22px 0 23px;border-bottom:1px solid var(--line)}
@@ -269,7 +271,7 @@
 .defi-solution-star{padding:27px 24px;background:linear-gradient(120deg,#fffaf0,#f8f4ff);border-radius:14px;border:1px solid #ead9a8;margin-top:25px}
 .root-order{font-size:.81rem;line-height:1.48;color:#5f5489;margin:12px 0 0}
 @media(max-width:920px){.defi-parts,.defi-diagrams{grid-template-columns:1fr}.defi-diagrams .defi-one-diagram{grid-column:auto}}
-@media(max-width:640px){.defi-final-head{padding:26px 22px}.defi-parts{padding:18px 15px 8px}.defi-part{padding:20px 17px}.defi-equation{font-size:1rem}.defi-correction{margin:12px 15px 16px}.defi-correction>summary{flex-wrap:wrap;padding:15px}.defi-correction>summary small{margin-left:24px}.defi-correction-body{padding:8px 15px 22px}.defi-solution-star{padding:20px 14px}}
+@media(max-width:640px){.defi-final-head{padding:26px 22px}.defi-parts{padding:18px 15px 8px}.defi-part{padding:20px 17px}.defi-equation{font-size:1rem}.defi-correction{margin:12px 15px 16px}.defi-correction-header{flex-wrap:wrap;padding:12px 15px}.defi-correction-toggle{margin-left:24px}.defi-correction-body{padding:8px 15px 22px}.defi-solution-star{padding:20px 14px}}
 
 .dark .defi-final{background:var(--paper);border-color:var(--line)}
 .dark .defi-final-head{background:linear-gradient(115deg,#343052,#403343)}
@@ -283,10 +285,11 @@
 .dark .defi-and{color:#d0bbf1}
 .dark .defi-part li::marker{color:#dac1ff}
 .dark .defi-correction{background:#2b304a;border-color:#6d6689}
-.dark .defi-correction>summary{background:#3f395a;color:#f5e8ff}
-.dark .defi-correction>summary:hover{background:#4e436a}
-.dark .defi-correction>summary small{color:#d5c3ee}
-.dark .defi-correction[open]>summary{border-color:#5a5571}
+.dark .defi-correction-header{background:#3f395a;color:#f5e8ff}
+.dark .defi-correction-toggle{color:#e4d2fa}
+.dark .defi-correction-toggle:hover{background:#564a73;color:#fff}
+.dark .defi-correction-toggle:focus-visible{outline-color:#dfc5ff}
+.dark .defi-correction.is-open .defi-correction-header{border-color:#5a5571}
 .dark .defi-solution h4,.dark .defi-diagrams h5{color:#d6bdff}
 .dark .defi-solution-math{background:#353b56;border-left-color:#a98bdf}
 .dark .defi-diagrams>div{background:#303650}
