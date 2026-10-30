@@ -38,10 +38,10 @@ section.innerHTML=`
 </article>
 <article class="defi-part defi-star">
   <span class="defi-part-number">PARTIE III · DÉFI ★ · RECHERCHE PERSONNELLE</span>
-  <h3>Deux tangentes issues d’un même point ?</h3>
+  <h3>Deux droites, un seul point commun chacune ?</h3>
   <p>On reprend la parabole <span class="math">C<sub>f</sub></span> de la partie II et l’origine <span class="math">O(0 ; 0)</span>.</p>
-  <p><strong>Démontrer qu’il existe exactement deux droites tangentes à <span class="math">C<sub>f</sub></span> passant par <span class="math">O</span>.</strong> Déterminer leurs équations ainsi que les coordonnées exactes de leurs points de contact.</p>
-  <p>Toute réponse devra justifier la tangence, et pas seulement proposer deux équations de droites.</p>
+  <p><strong>Démontrer qu’il existe exactement deux droites <strong>non verticales</strong> passant par <span class="math">O</span> et ayant chacune <strong>un unique point commun</strong> avec <span class="math">C<sub>f</sub></span>.</strong> Déterminer leurs équations cartésiennes ainsi que les coordonnées exactes de leurs points communs avec la parabole.</p>
+  <p>Il faudra justifier qu’il n’existe pas d’autres droites possédant cette propriété.</p>
 </article>
 </div>
 <details class="defi-correction" id="defi-corrige">
@@ -82,7 +82,7 @@ section.innerHTML=`
       <p class="defi-solution-math"><span class="math">A(1 − √2 ; 4 − √2)</span> et <span class="math">B(1 + √2 ; 4 + √2)</span>.</p>
       <h4>2. Positions relatives des deux courbes</h4>
       <p>Le signe de <span class="math">h(x) = f(x) − g(x)</span> détermine quelle courbe est au-dessus de l’autre. Comme son coefficient dominant est positif et ses racines sont <span class="math">x₁</span> et <span class="math">x₂</span> :</p>
-      <div class="defi-diagrams"><div class="defi-one-diagram"><h5>Tableau de signes de f − g</h5><div id="defi-signe-h"></div></div></div>
+      <div class="defi-diagrams"><div class="defi-one-diagram"><h5>Tableau de signes de f − g</h5><div id="defi-signe-h"></div></div></div><figure class="defi-figure"><figcaption><strong>Positions relatives :</strong> les surfaces colorées correspondent aux intervalles où la parabole est au-dessus ou au-dessous de la droite.</figcaption><div id="defi-figure-positions"></div><div class="defi-legend"><span class="defi-legend-positive">Zone verte : f(x) &gt; g(x)</span><span class="defi-legend-negative">Zone orangée : f(x) &lt; g(x)</span></div></figure>
       <p>Pour <span class="math">x &lt; 1 − √2</span> ou <span class="math">x &gt; 1 + √2</span>, <span class="math">f(x) &gt; g(x)</span> : <span class="math">C<sub>f</sub></span> est <strong>au-dessus</strong> de <span class="math">C<sub>g</sub></span>.</p>
       <p>Pour <span class="math">1 − √2 &lt; x &lt; 1 + √2</span>, <span class="math">f(x) &lt; g(x)</span> : <span class="math">C<sub>f</sub></span> est <strong>au-dessous</strong> de <span class="math">C<sub>g</sub></span>.</p>
       <p>Aux deux abscisses <span class="math">1 − √2</span> et <span class="math">1 + √2</span>, les deux courbes se coupent.</p>
@@ -93,22 +93,22 @@ section.innerHTML=`
       <p class="defi-key-point">Un résultat remarquable : bien que les coordonnées des points d’intersection soient irrationnelles, leur distance est exactement égale à 4.</p>
     </article>
     <article class="defi-solution defi-solution-star">
-      <h3>Corrigé du défi ★ — Deux tangentes issues de O</h3>
+      <h3>Corrigé du défi ★ — Deux droites à intersection unique</h3>
       <h4>1. Transformer la géométrie en algèbre</h4>
-      <p>Une tangente à la courbe d’un polynôme n’est pas verticale. Toute droite non verticale passant par <span class="math">O(0 ; 0)</span> s’écrit <span class="math">y = mx</span>.</p>
+      <p>Conformément à l’énoncé, on cherche uniquement des droites <strong>non verticales</strong> passant par <span class="math">O(0 ; 0)</span>. Chacune possède une équation de la forme <span class="math">y = mx</span>, où <span class="math">m</span> est réel.</p>
       <p>Les intersections entre la droite et la parabole vérifient :</p>
       <p class="defi-solution-math"><span class="math">x² − x + 2 = mx ⇔ x² − (m + 1)x + 2 = 0</span>.</p>
-      <p>La tangence correspond ici à une <strong>racine double</strong> de l’équation d’intersection, donc à un discriminant nul.</p>
+      <p>Pour cette parabole et une droite non verticale, demander <strong>un seul point commun</strong> revient à imposer une <strong>racine double</strong> à l’équation d’intersection, donc un discriminant nul. Nous montrerons ensuite pourquoi les droites obtenues sont tangentes.</p>
       <h4>2. Déterminer les pentes possibles</h4>
       <p>Le discriminant dépend maintenant de <span class="math">m</span> :</p>
       <p class="defi-solution-math"><span class="math">Δ(m) = (m + 1)² − 8</span>.</p>
-      <p>Pour avoir une tangente, on impose <span class="math">Δ(m) = 0</span>, ce qui équivaut successivement à <span class="math">(m + 1)² = 8</span> et <span class="math">m + 1 = ±2√2</span>.</p>
-      <p>Il y a exactement <strong>deux pentes</strong>, soit deux droites candidates :</p>
-      <p class="defi-solution-math"><span class="math">T₁ : y = (−1 − 2√2)x</span> et <span class="math">T₂ : y = (−1 + 2√2)x</span>.</p>
+      <p>Pour qu’il y ait un seul point commun, on impose <span class="math">Δ(m) = 0</span>, ce qui équivaut successivement à <span class="math">(m + 1)² = 8</span> et <span class="math">m + 1 = ±2√2</span>.</p>
+      <p>L’équation a exactement deux solutions réelles : il existe donc deux droites non verticales, et seulement deux, ayant l’unique point commun recherché :</p>
+      <p class="defi-solution-math"><span class="math">D₁ : (1 + 2√2)x + y = 0</span> et <span class="math">D₂ : (1 − 2√2)x + y = 0</span>.</p><p>Ce sont les <strong>équations cartésiennes</strong> demandées, de la forme <span class="math">Ax + By + C = 0</span>. Le nom de chaque droite est écrit devant deux-points. Les formes réduites correspondantes sont <span class="math">y = (−1 − 2√2)x</span> et <span class="math">y = (−1 + 2√2)x</span>.</p>
       <h4>3. Vérifier la tangence et trouver les points de contact</h4>
       <p>Pour la première droite, l’équation d’intersection devient <span class="math">(x + √2)² = 0</span>. Son unique abscisse de contact est <span class="math">−√2</span> ; le point correspondant est <span class="math">K₁(−√2 ; 4 + √2)</span>.</p>
-      <p>Pour la seconde, on obtient <span class="math">(x − √2)² = 0</span>, d’où le point <span class="math">K₂(√2 ; 4 − √2)</span>.</p>
-      <p>Dans chaque cas, la différence entre la parabole et la droite est un <strong>carré parfait</strong>, nul uniquement au point double. Ces deux droites sont donc bien tangentes. Aucune autre pente n’annule le discriminant : il n’existe pas d’autre tangente passant par l’origine.</p>
+      <p>Pour la seconde, on obtient <span class="math">(x − √2)² = 0</span>, d’où le point <span class="math">K₂(√2 ; 4 − √2)</span>.</p><figure class="defi-figure"><figcaption><strong>Les deux droites issues de O :</strong> chacune rencontre la parabole en un seul point. Leurs noms et leurs équations cartésiennes sont indiqués au voisinage des droites.</figcaption><div id="defi-figure-contact"></div><div class="defi-legend"><span class="defi-legend-contact1">D₁ : (1 + 2√2)x + y = 0</span><span class="defi-legend-contact2">D₂ : (1 − 2√2)x + y = 0</span></div></figure>
+      <p>La vérification est explicite pour chacune des deux droites :</p><p class="defi-solution-math"><span class="math">f(x) − (−1 − 2√2)x = (x + √2)²</span>.</p><p class="defi-solution-math"><span class="math">f(x) − (−1 + 2√2)x = (x − √2)²</span>.</p><p>Dans chaque cas, la différence est un <strong>carré parfait</strong> : le contact est double, et la parabole reste du même côté de la droite au voisinage du point commun. On obtient ici les deux <strong>tangentes</strong> à la parabole passant par l’origine. Aucune autre droite non verticale ayant un seul point commun ne peut exister, puisque le discriminant ne s’annule que pour ces deux valeurs de <span class="math">m</span>.</p><p class="defi-vocabulaire"><strong>Attention au vocabulaire :</strong> « avoir un seul point commun avec une courbe » n’est <strong>pas</strong> une définition générale de la tangence. Par exemple, la droite verticale <span class="math">x = 0</span> n’a qu’un point commun avec la parabole <span class="math">y = x²</span>, mais sa tangente en <span class="math">O</span> est la droite horizontale <span class="math">y = 0</span>. Notre critère de racine double caractérise le contact tangent <strong>dans la situation particulière étudiée ici</strong>.</p>
       <p class="defi-key-point"><strong>L’idée inventive :</strong> introduire une droite inconnue <span class="math">y = mx</span>, puis transformer la tangence en condition <span class="math">Δ(m) = 0</span>. Le problème géométrique devient une équation du second degré portant sur la pente.</p>
     </article>
   </div>

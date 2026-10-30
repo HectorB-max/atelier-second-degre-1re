@@ -296,3 +296,63 @@
 @media(prefers-reduced-motion:reduce){.defi-correction-icon{transition:none}}
 
 .takeaway-challenge{margin:16px 0 0;text-align:right}.takeaway-challenge a{display:inline-block;background:#ede6ff;color:#55388a;border-radius:10px;padding:11px 16px;font-weight:800;text-decoration:none}.takeaway-challenge a:hover,.takeaway-challenge a:focus-visible{background:#dfceff}.dark .takeaway-challenge a{background:#574373;color:#f5e8ff}
+
+/* Figures des positions relatives et des contacts — surfaces colorées en SVG. */
+.defi-figure{margin:21px 0 23px;padding:15px;background:var(--forest-soft);border:1px solid var(--line);border-radius:15px;max-width:100%}
+.defi-figure>figcaption{font-size:.92rem;line-height:1.5;margin:0 0 12px}
+.defi-figure-scroll{max-width:100%;overflow-x:auto;scrollbar-width:thin;border-radius:12px;background:var(--paper);border:1px solid var(--line)}
+.defi-plot{display:block;width:100%;min-width:710px;height:auto}
+.defi-plot-bg{fill:#fefeff}
+.defi-plot-grid{stroke:#e6e6f1;stroke-width:1}
+.defi-plot-axis{stroke:#6d748b;stroke-width:1.7}
+.defi-plot-tick{font-size:13px;fill:#59637d;font-family:system-ui,sans-serif}
+.defi-plot-note{font-size:13px;fill:#656783;font-family:system-ui,sans-serif}
+.defi-projection{stroke:#aa9eaf;stroke-width:1.4;stroke-dasharray:4 6}
+.defi-fill-positive{fill:#55af92;fill-opacity:.3}
+.defi-fill-negative{fill:#efab71;fill-opacity:.35}
+.defi-fill-contact1{fill:#8f7acd;fill-opacity:.24}
+.defi-fill-contact2{fill:#63bbad;fill-opacity:.26}
+.defi-curve-f{stroke:#6251bc;stroke-width:4;stroke-linecap:round;fill:none}
+.defi-curve-g{stroke:#c16b39;stroke-width:3.5;stroke-linecap:round;fill:none}
+.defi-curve-d1{stroke:#9871c7;stroke-width:3.6;stroke-linecap:round;fill:none}
+.defi-curve-d2{stroke:#209b95;stroke-width:3.6;stroke-linecap:round;fill:none}
+.defi-plot-label{font-family:system-ui,sans-serif;font-size:17px;font-weight:790;stroke:#fefeff;stroke-width:5px;stroke-linejoin:round;paint-order:stroke;white-space:nowrap}
+.defi-label-f{fill:#5b48af}
+.defi-label-g{fill:#ae5c27}
+.defi-label-d1{fill:#7754b6;font-size:16px}
+.defi-label-d2{fill:#18807b;font-size:16px}
+.defi-point{fill:#f5ce66;stroke:#453d6e;stroke-width:2}
+.defi-point-label{fill:#343249;font-size:17px;font-weight:850;paint-order:stroke;stroke:#fefeff;stroke-width:4px}
+
+.defi-legend{display:flex;flex-wrap:wrap;gap:10px 15px;margin:13px 0 2px}
+.defi-legend span{font-size:.84rem;font-weight:750;display:inline-flex;align-items:center;gap:8px;line-height:1.45}
+.defi-legend span::before{content:"";width:14px;height:14px;border-radius:4px;flex:none}
+.defi-legend-positive::before{background:#55af92}
+.defi-legend-negative::before{background:#efab71}
+.defi-legend-contact1::before{background:#9871c7}
+.defi-legend-contact2::before{background:#209b95}
+.defi-vocabulaire{margin:19px 0;padding:13px 16px;border-left:4px solid #6a88b9;background:#eff5ff;border-radius:0 11px 11px 0}
+.dark .defi-figure{background:#323751;border-color:#575d78}
+.dark .defi-figure-scroll{border-color:#666d87;background:#242a41}
+.dark .defi-plot-bg{fill:#252c45}
+.dark .defi-plot-grid{stroke:#414965}
+.dark .defi-plot-axis{stroke:#c4ccdf}
+.dark .defi-plot-tick,.dark .defi-plot-note{fill:#d1d7e8}
+.dark .defi-projection{stroke:#8c91ae}
+.dark .defi-fill-positive{fill:#50bd9c;fill-opacity:.3}
+.dark .defi-fill-negative{fill:#e5a56b;fill-opacity:.34}
+.dark .defi-fill-contact1{fill:#b096e9;fill-opacity:.23}
+.dark .defi-fill-contact2{fill:#5ac5b8;fill-opacity:.28}
+.dark .defi-curve-f{stroke:#b6a0ff}
+.dark .defi-curve-g{stroke:#ffad67}
+.dark .defi-curve-d1{stroke:#c9adff}
+.dark .defi-curve-d2{stroke:#6cddd1}
+.dark .defi-plot-label,.dark .defi-point-label{stroke:#252c45}
+.dark .defi-label-f{fill:#d2c4ff}
+.dark .defi-label-g{fill:#ffc595}
+.dark .defi-label-d1{fill:#e4d1ff}
+.dark .defi-label-d2{fill:#b8fff0}
+.dark .defi-point-label{fill:#f9f4ff}
+.dark .defi-point{stroke:#e9dbb9}
+.dark .defi-vocabulaire{background:#313e5a;border-left-color:#a3bce7}
+@media(max-width:650px){.defi-figure{padding:11px}.defi-figure>figcaption{font-size:.88rem}.defi-legend span{font-size:.76rem}}
