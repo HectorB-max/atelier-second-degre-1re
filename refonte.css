@@ -1,1 +1,41 @@
 .chapter-intro{margin:3rem 0;padding:2rem;border-radius:18px;background:#eef0ff}.chapter-intro h2{margin:.5rem 0}.chapter-index{font-size:.75rem;letter-spacing:.15em;color:#6354a9;font-weight:800}
+/* Titres interrogatifs des chapitres et des cartes d'entrée */
+.chapter-intro{margin:56px 0 24px;padding:30px 33px;border:1px solid #ded9f2;border-radius:22px;background:linear-gradient(115deg,#f0ecff,#fff5f0);box-shadow:0 12px 30px rgba(62,50,113,.06)}
+.chapter-intro h2{font-size:clamp(1.65rem,3vw,2.26rem);line-height:1.23;margin:8px 0;letter-spacing:-.04em}
+.chapter-intro .chapter-index{font-size:.75rem;color:#7353b3;font-weight:850;letter-spacing:.13em}
+.chapter-intro .chapter-topic{font-size:1.13rem;color:#7654ac;font-weight:800;margin:0 0 11px}
+.chapter-intro p:last-child{color:#66627a;font-size:.94rem;margin:0}
+.route .route-question{font-size:1.05rem;line-height:1.35;margin:0 0 12px}
+.route .route-topic{font-size:.9rem;font-weight:770;color:#7555ac;line-height:1.35}
+.route .route-topic::before{content:"→";margin-right:7px;color:#cf8a5e}
+@media(max-width:890px){.chapter-intro{padding:22px 20px}.route .route-question{min-height:0}}
+
+/* Tableau lisible : valeurs aux seuls points finis, flèches de variations */
+.negative-variation-table{margin-top:20px;padding:14px 16px 17px;border-radius:12px;background:rgba(255,255,255,.85);border:1px solid #eedacf}
+.variation-table-caption{font-size:.9rem;font-weight:800;color:#a14f5d;margin:0 0 10px}
+.negative-variation-table table{border-collapse:collapse;width:100%;table-layout:fixed;color:#3a344b;background:#fff}
+.negative-variation-table th,.negative-variation-table td{border:1px solid #e2d7df;text-align:center;padding:9px 3px}
+.negative-variation-table th{background:#f6edf2;width:22%}
+.negative-variation-table td{width:15.6%}
+.negative-variation-table .variation-arrow{font-size:2rem;color:#a45a8e;line-height:1.15;height:75px}
+.negative-variation-table .variation-maximum{background:#fff0e1;color:#9c485c}
+.negative-variation-table .variation-maximum strong{display:block;font-size:1.4rem}
+.negative-variation-table .variation-maximum small{display:block;font-size:.7rem;line-height:1.2}
+.dark .chapter-intro{background:linear-gradient(120deg,#332d57,#312b41);border-color:#5c5679}
+.dark .chapter-intro .chapter-index,.dark .chapter-intro .chapter-topic{color:#dcc8ff}
+.dark .chapter-intro p:last-child{color:#cbc5df}
+.dark .route .route-topic{color:#e0d1ff}
+.dark .negative-variation-table{background:#34344f;border-color:#6e5971}
+.dark .variation-table-caption{color:#ffbeca}
+.dark .negative-variation-table table{background:#2a304a;color:#f4f1ff}
+.dark .negative-variation-table th{background:#383951}
+.dark .negative-variation-table th,.dark .negative-variation-table td{border-color:#645b7d}
+.dark .negative-variation-table .variation-arrow{color:#edadd5}
+.dark .negative-variation-table .variation-maximum{background:#574158;color:#ffe1b3}
+@media(max-width:640px){.negative-variation-table{padding:9px}.negative-variation-table th,.negative-variation-table td{padding:7px 2px}}
+
+.negative-example{background:#fff1ea;border:1px solid #f0d8cd;border-left:4px solid #ce7864;border-radius:14px;margin:23px 0;padding:19px 20px}
+.negative-example>strong{display:block;color:#a55356;font-size:1.02rem;margin:0 0 10px}
+.negative-example>p{margin:8px 0;line-height:1.6}
+.dark .negative-example{background:#453346;border-color:#715465}
+.dark .negative-example>strong{color:#ffd0bd}
