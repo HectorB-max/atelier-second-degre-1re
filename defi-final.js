@@ -44,9 +44,9 @@ section.innerHTML=`
   <p>Il faudra justifier qu’il n’existe pas d’autres droites possédant cette propriété.</p>
 </article>
 </div>
-<details class="defi-correction" id="defi-corrige">
-  <summary><span class="defi-correction-icon">▸</span>Afficher le corrigé détaillé <small>— seulement après avoir cherché</small></summary>
-  <div class="defi-correction-body">
+<div class="defi-correction" id="defi-corrige">
+  <div class="defi-correction-title"><span class="defi-correction-icon" aria-hidden="true">▸</span><span>Afficher le corrigé détaillé</span><button type="button" class="defi-correction-toggle" aria-expanded="false" aria-controls="defi-corrige-contenu">— seulement après avoir cherché</button></div>
+  <div class="defi-correction-body" id="defi-corrige-contenu" hidden>
     <p class="defi-correction-intro">Les trois parties se résolvent avec les outils du chapitre. Il n’est pas nécessaire d’utiliser une calculatrice pour les racines irrationnelles.</p>
     <article class="defi-solution">
       <h3>Corrigé de la partie I — Un trinôme sous trois formes</h3>
@@ -112,11 +112,20 @@ section.innerHTML=`
       <p class="defi-key-point"><strong>L’idée inventive :</strong> introduire une droite inconnue <span class="math">y = mx</span>, puis transformer la tangence en condition <span class="math">Δ(m) = 0</span>. Le problème géométrique devient une équation du second degré portant sur la pente.</p>
     </article>
   </div>
-</details>
+</div>
 <p class="defi-final-foot">Ce défi est indépendant du compteur des QCM : tu peux le refaire sur papier sans effacer ta progression.</p>
 `;
 const anchor=document.querySelector('.closing');
 if(anchor)anchor.before(section);
+const toggle=section.querySelector('.defi-correction-toggle');
+const panel=section.querySelector('#defi-corrige-contenu');
+toggle.addEventListener('click',()=>{
+ const open=toggle.getAttribute('aria-expanded')!=='true';
+ toggle.setAttribute('aria-expanded',String(open));
+ toggle.setAttribute('aria-label',open?'Masquer le corrigé détaillé':'Afficher le corrigé détaillé, seulement après avoir cherché');
+ panel.hidden=!open;
+ section.querySelector('#defi-corrige').classList.toggle('is-open',open);
+});
 if(typeof window.secondDegreVariationSVG==='function'){
  document.getElementById('defi-variation-P').append(window.secondDegreVariationSVG({up:true,label:'max',extremum:'2',alpha:'2',name:'P(x)'}));
 }
