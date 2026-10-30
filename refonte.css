@@ -356,3 +356,34 @@
 .dark .defi-point{stroke:#e9dbb9}
 .dark .defi-vocabulaire{background:#313e5a;border-left-color:#a3bce7}
 @media(max-width:650px){.defi-figure{padding:11px}.defi-figure>figcaption{font-size:.88rem}.defi-legend span{font-size:.76rem}}
+
+/* Palette des figures : courbe f violette, courbe g corail, région turquoise. */
+.defi-fill-band{fill:#45b7a9;fill-opacity:.27}
+.defi-fill-band-inside{fill-opacity:.38}
+.defi-fill-contact-band{fill:#45b7a9;fill-opacity:.29}
+.defi-zone-sign{font-size:15px;fill:#16685f;font-weight:850}
+.defi-legend-curve-f::before{background:#6251bc}
+.defi-legend-curve-g::before{background:#c16b39}
+.defi-legend-region::before{background:#45b7a9}
+.defi-curve-d1{stroke:#c87942}
+.defi-curve-d2{stroke:#3477bb}
+.defi-label-d1{fill:#a65d2d}
+.defi-label-d2{fill:#245c98}
+.defi-legend-contact1::before{background:#c87942}
+.defi-legend-contact2::before{background:#3477bb}
+.dark .defi-fill-band{fill:#4ac4b0;fill-opacity:.27}
+.dark .defi-fill-band-inside{fill-opacity:.39}
+.dark .defi-fill-contact-band{fill:#4ac4b0;fill-opacity:.28}
+.dark .defi-zone-sign{fill:#b8ffed}
+.dark .defi-curve-d1{stroke:#ffad73}
+.dark .defi-curve-d2{stroke:#79b9ff}
+.dark .defi-label-d1{fill:#ffca9a}
+.dark .defi-label-d2{fill:#a6d3ff}
+.dark .defi-legend-curve-f::before{background:#b6a0ff}
+.dark .defi-legend-curve-g::before{background:#ffad67}
+.dark .defi-legend-region::before{background:#4ac4b0}
+.dark .defi-legend-contact1::before{background:#ffad73}
+.dark .defi-legend-contact2::before{background:#79b9ff}
+
+.defi-derivative-note{background:#f2f0fd;border-left:3px solid #8872bf;padding:12px 15px;border-radius:0 10px 10px 0}
+.dark .defi-derivative-note{background:#353653;border-color:#c7b3f5}

@@ -46,6 +46,12 @@ function region(f,g,from,to,X,Y,n=110){
 function lineTag(svg,x,y,text,cls){
  create('text',{x,y,class:'defi-plot-label '+cls},svg,text);
 }
+function curveTag(svg,x,y,sub,equation,cls){
+ const t=create('text',{x,y,class:'defi-plot-label '+cls},svg);
+ create('tspan',{},t,'C');
+ create('tspan',{'font-size':'70%','baseline-shift':'sub'},t,sub);
+ create('tspan',{'baseline-shift':'baseline'},t,' : '+equation);
+}
 function dot(svg,X,Y,x,y,label,dx=8,dy=-11){
  create('circle',{cx:X(x),cy:Y(y),r:6,class:'defi-point'},svg);
  lineTag(svg,X(x)+dx,Y(y)+dy,label,'defi-point-label');
@@ -58,7 +64,7 @@ function positions(){
    caption:'Positions relatives des courbes de f et g : zones vertes à gauche de 1 moins racine de deux et à droite de 1 plus racine de deux lorsque f est au-dessus de g ; zone orange entre ces deux abscisses lorsque f est au-dessous de g.'
  });
  const f=x=>x*x-x+2,g=x=>x+3,a=1-Math.SQRT2,b=1+Math.SQRT2;
- for(const [lo,hi,cls] of [[-1.2,a,'defi-fill-positive'],[a,b,'defi-fill-negative'],[b,3.3,'defi-fill-positive']]){
+ for(const [lo,hi,cls] of [[-1.2,a,'defi-fill-band defi-fill-band-outside'],[a,b,'defi-fill-band defi-fill-band-inside'],[b,3.3,'defi-fill-band defi-fill-band-outside']]){
   create('path',{d:region(f,g,lo,hi,X,Y),class:cls,'clip-path':clip},svg);
  }
  create('path',{d:path(f,-1.2,3.3,X,Y),class:'defi-curve-f','clip-path':clip},svg);
@@ -66,9 +72,12 @@ function positions(){
  for(const x of [a,b])create('line',{x1:X(x),x2:X(x),y1:Y(0),y2:Y(g(x)),class:'defi-projection'},svg);
  dot(svg,X,Y,a,g(a),'A',-22,-12);
  dot(svg,X,Y,b,g(b),'B',10,-11);
- lineTag(svg,X(1.12),Y(f(1.12))+43,'C_f : y = x² − x + 2','defi-label-f');
- lineTag(svg,X(.32)+4,Y(g(.32))-22,'C_g : y = x + 3','defi-label-g');
- create('text',{x:435,y:397,'text-anchor':'middle',class:'defi-plot-note'},svg,'Les surfaces colorées dépendent du signe de h = f − g.');
+ curveTag(svg,X(1.12),Y(f(1.12))+22,'f','y = x² − x + 2','defi-label-f');
+ curveTag(svg,X(.32)+4,Y(g(.32))-22,'g','y = x + 3','defi-label-g');
+ lineTag(svg,X(-1),Y(3.15),'f > g','defi-zone-sign');
+ lineTag(svg,X(1.0),Y(3.4),'f < g','defi-zone-sign');
+ lineTag(svg,X(2.7),Y(6.6),'f > g','defi-zone-sign');
+ create('text',{x:435,y:397,'text-anchor':'middle',class:'defi-plot-note'},svg,'La surface turquoise matérialise les régions comprises entre les deux courbes.');
 }
 function contacts(){
  const holder=document.getElementById('defi-figure-contact');if(!holder)return;
@@ -79,8 +88,8 @@ function contacts(){
  });
  const f=x=>x*x-x+2,m1=-1-2*Math.SQRT2,m2=-1+2*Math.SQRT2;
  const d1=x=>m1*x,d2=x=>m2*x;
- create('path',{d:region(f,d1,-2.65,0,X,Y),class:'defi-fill-contact1','clip-path':clip},svg);
- create('path',{d:region(f,d2,0,3,X,Y),class:'defi-fill-contact2','clip-path':clip},svg);
+ create('path',{d:region(f,d1,-2.65,0,X,Y),class:'defi-fill-contact-band','clip-path':clip},svg);
+ create('path',{d:region(f,d2,0,3,X,Y),class:'defi-fill-contact-band','clip-path':clip},svg);
  create('path',{d:path(f,-2.65,3,X,Y),class:'defi-curve-f','clip-path':clip},svg);
  create('path',{d:path(d1,-2.65,3,X,Y),class:'defi-curve-d1','clip-path':clip},svg);
  create('path',{d:path(d2,-2.65,3,X,Y),class:'defi-curve-d2','clip-path':clip},svg);
@@ -88,9 +97,9 @@ function contacts(){
  dot(svg,X,Y,Math.SQRT2,4-Math.SQRT2,'K₂',15,-14);
  dot(svg,X,Y,0,0,'O',-22,22);
  lineTag(svg,78,58,'D₁ : (1 + 2√2)x + y = 0','defi-label-d1');
- lineTag(svg,459,218,'D₂ : (1 − 2√2)x + y = 0','defi-label-d2');
- lineTag(svg,620,128,'C_f : y = x² − x + 2','defi-label-f');
- create('text',{x:435,y:397,'text-anchor':'middle',class:'defi-plot-note'},svg,'Les surfaces colorées sont les écarts entre la parabole et chacune des deux droites.');
+ create('text',{x:796,y:217,'text-anchor':'end',class:'defi-plot-label defi-label-d2'},svg,'D₂ : (1 − 2√2)x + y = 0');
+ curveTag(svg,610,183,'f','y = x² − x + 2','defi-label-f');
+ create('text',{x:435,y:397,'text-anchor':'middle',class:'defi-plot-note'},svg,'Les zones turquoise occupent les régions comprises entre la parabole et chacune des deux droites.');
 }
 positions();
 contacts();
