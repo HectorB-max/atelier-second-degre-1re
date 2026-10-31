@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Un atelier de remédiation en mathématiques pour la Première spécialité : racines, forme canonique et signe d'un trinôme, avec exemples guidés et exercices corrigés.">
+  <meta name="description" content="Un atelier de remédiation en mathématiques pour la Première spécialité : racines, relations coefficients-racines, forme canonique et signe d'un trinôme, avec exemples guidés et exercices corrigés.">
   <meta name="theme-color" content="#f8f7ff">
   <title>Le second degré, pas à pas — Première spécialité</title>
   <style>
@@ -364,7 +364,63 @@
       <article class="root-case"><span class="case-tag">Δ = 0</span><h4>Une racine double</h4><p>La parabole touche l'axe horizontal en un point :</p><p class="math centered">x₀ = <span class="math-frac" role="math" aria-label="−b sur 2a"><span class="math-frac-top">−b</span><span class="math-frac-bottom">2a</span></span></p><p><strong>Exemple :</strong> <span class="math">x² + 2x + 1</span> : <span class="math">Δ = 0</span>, racine double <span class="math">−1</span>.</p></article>
       <article class="root-case"><span class="case-tag">Δ &lt; 0</span><h4>Aucune racine réelle</h4><p>La parabole ne rencontre pas l'axe horizontal : l'équation <span class="math">P(x) = 0</span> n'a pas de solution dans ℝ.</p><p><strong>Exemple :</strong> <span class="math">x² + 2x + 5</span> : <span class="math">Δ = −16</span>, aucune racine réelle.</p></article>
     </div>
-    <p class="keyline"><strong>À retenir :</strong> le discriminant sert d'abord à <strong>chercher les racines</strong> ; nous le retrouverons ensuite pour étudier le signe du trinôme.</p>
+    <p class="keyline"><strong>À retenir :</strong> le discriminant sert d'abord à <strong>chercher les racines</strong> ; nous le retrouverons ensuite pour étudier le signe du trinôme. <a href="#coefficients-racines">Découvrir aussi les relations entre coefficients et racines ↗</a></p>
+  </section>
+
+
+  <section class="root-relations" id="coefficients-racines" aria-labelledby="rr-title">
+    <div class="rr-heading">
+      <p class="eyebrow">ATELIER 01 · LES RACINES · UNE AUTRE MÉTHODE</p>
+      <h2 id="rr-title">Les coefficients connaissent-ils déjà les racines&nbsp;?</h2>
+      <p>Deux racines peuvent être reliées aux trois coefficients du trinôme. C'est souvent le moyen le plus rapide pour <strong>retrouver une racine manquante</strong>, reconnaître une factorisation ou contrôler un calcul.</p>
+    </div>
+    <div class="rr-formulas" aria-label="Relations entre coefficients et racines réelles">
+      <div><span class="rr-formula-label">SOMME DES RACINES</span><p class="rr-main-formula"><span class="math">x₁ + x₂ = −</span><span class="math-frac" role="math" aria-label="b sur a"><span class="math-frac-top">b</span><span class="math-frac-bottom">a</span></span></p><p>Le coefficient de <span class="math">x</span> intervient avec le <strong>signe opposé</strong>.</p></div>
+      <div><span class="rr-formula-label">PRODUIT DES RACINES</span><p class="rr-main-formula"><span class="math">x₁ × x₂ = </span><span class="math-frac" role="math" aria-label="c sur a"><span class="math-frac-top">c</span><span class="math-frac-bottom">a</span></span></p><p>Le terme constant est divisé par le coefficient de <span class="math">x²</span>.</p></div>
+    </div>
+    <p class="rr-condition"><strong>Hypothèses :</strong> <span class="math">P(x) = ax² + bx + c</span> avec <span class="math">a ≠ 0</span> et <strong>deux racines réelles, éventuellement confondues</strong>. Ces formules ne supposent pas <span class="math">a = 1</span>.</p>
+    <details class="rr-proof">
+      <summary>D'où viennent ces relations ? Voir la démonstration</summary>
+      <div class="rr-proof-body">
+        <p>Si <span class="math">x₁</span> et <span class="math">x₂</span> sont les racines réelles (éventuellement égales), alors la forme factorisée est :</p>
+        <p class="rr-proof-equation math">P(x) = a(x − x₁)(x − x₂)</p>
+        <p>Développons sans rien supposer sur les signes :</p>
+        <p class="rr-proof-equation math">P(x) = ax² − a(x₁ + x₂)x + ax₁x₂</p>
+        <p>En comparant les coefficients avec <span class="math">ax² + bx + c</span>, on obtient <span class="math">b = −a(x₁ + x₂)</span> et <span class="math">c = ax₁x₂</span>. Puisque <span class="math">a ≠ 0</span>, les deux relations annoncées en découlent.</p>
+        <p class="rr-proof-note"><strong>Réciproquement :</strong> si deux réels <span class="math">u</span> et <span class="math">v</span> ont pour somme <span class="math">−b/a</span> et pour produit <span class="math">c/a</span>, alors <span class="math">P(x) = a(x − u)(x − v)</span> : ce sont les racines réelles.</p>
+      </div>
+    </details>
+    <div class="rr-cases">
+      <article><strong>Δ &gt; 0</strong><p>Deux racines réelles distinctes : on applique les relations à <span class="math">x₁</span> et <span class="math">x₂</span>.</p></article>
+      <article><strong>Δ = 0</strong><p>Une racine double <span class="math">x₀</span>, <strong>comptée deux fois</strong> : somme <span class="math">2x₀</span>, produit <span class="math">x₀²</span>.</p></article>
+      <article><strong>Δ &lt; 0</strong><p>Aucune racine réelle : il n'y a <strong>pas</strong> de paire de racines réelles à additionner ou multiplier.</p></article>
+    </div>
+    <div class="rr-lab">
+      <div class="rr-lab-head"><p class="eyebrow">LABORATOIRE INTERACTIF</p><h3>Choisis les racines, observe les coefficients</h3><p>Change les deux racines et le coefficient <span class="math">a</span>. Le polynôme et sa parabole se mettent à jour : vérifie les deux égalités à chaque étape.</p></div>
+      <div class="rr-controls">
+        <label for="rr-a"><span>Coefficient <span class="math">a</span></span><select id="rr-a"><option value="-3">−3</option><option value="-2">−2</option><option value="-1">−1</option><option value="1" selected>1</option><option value="2">2</option><option value="3">3</option></select></label>
+        <label for="rr-x1"><span>Valeur choisie A : <output id="rr-x1-display" for="rr-x1">1</output></span><input id="rr-x1" type="range" min="-4" max="4" step="1" value="1"></label>
+        <label for="rr-x2"><span>Valeur choisie B : <output id="rr-x2-display" for="rr-x2">3</output></span><input id="rr-x2" type="range" min="-4" max="4" step="1" value="3"></label>
+        <button id="rr-reset" type="button">Revenir à l'exemple initial</button>
+      </div>
+      <div class="rr-lab-grid">
+        <div class="rr-graph-wrap"><svg id="rr-graph" role="img" aria-label="Parabole dont les racines et le coefficient directeur peuvent varier" viewBox="0 0 720 360" preserveAspectRatio="xMidYMid meet"></svg><p class="rr-graph-caption">Les points sur l'axe horizontal représentent les racines réelles choisies. Sur petit écran, fais glisser le graphique horizontalement.</p></div>
+        <div class="rr-live" aria-live="polite" aria-atomic="true">
+          <div class="rr-live-tag">COEFFICIENTS ET RACINES</div>
+          <p id="rr-live-expanded" class="rr-live-eq math"></p>
+          <p id="rr-live-factored" class="rr-live-eq math"></p>
+          <div class="rr-live-values"><p id="rr-live-sum"></p><p id="rr-live-product"></p></div>
+          <p id="rr-live-explain" class="rr-live-explain"></p>
+        </div>
+      </div>
+    </div>
+    <div class="rr-methods">
+      <article><span class="rr-mini-label">MÉTHODE 1 · CHERCHER DEUX NOMBRES</span><h3>Sans calculer le discriminant</h3><p>Pour <span class="math">x² − 7x + 12</span>, on cherche deux nombres dont la <strong>somme vaut 7</strong> et le <strong>produit vaut 12</strong>. Ce sont <span class="math">3</span> et <span class="math">4</span>.</p><p class="rr-method-result math">x² − 7x + 12 = (x − 3)(x − 4)</p></article>
+      <article><span class="rr-mini-label">MÉTHODE 2 · UNE RACINE CONNUE</span><h3>Retrouver l'autre racine</h3><p>Pour <span class="math">Q(x) = 2x² − 7x + 3</span>, on vérifie que <span class="math">Q(3) = 0</span>. Si <span class="math">x₁ = 3</span>, alors, par le produit :</p><p class="rr-method-result math">3 × x₂ = <span class="math-frac" role="math" aria-label="trois sur deux"><span class="math-frac-top">3</span><span class="math-frac-bottom">2</span></span> ; x₂ = <span class="math-frac" role="math" aria-label="un sur deux"><span class="math-frac-top">1</span><span class="math-frac-bottom">2</span></span></p><p>On confirme avec la somme : <span class="math">3 + </span><span class="math-frac" role="math" aria-label="un sur deux"><span class="math-frac-top">1</span><span class="math-frac-bottom">2</span></span> <span class="math">= </span><span class="math-frac" role="math" aria-label="sept sur deux"><span class="math-frac-top">7</span><span class="math-frac-bottom">2</span></span>.</p></article>
+    </div>
+    <p class="rr-caution"><strong>Attention à la racine nulle :</strong> si une racine est <span class="math">0</span>, on ne peut pas diviser le produit par cette racine pour trouver l'autre. On utilise alors la <strong>somme</strong>. Il faut également vérifier qu'un nombre annoncé comme racine annule bien le polynôme.</p>
+    <div class="rr-training"><p class="eyebrow">À TON TOUR · 4 QUESTIONS SUPPLÉMENTAIRES</p><h3>Utiliser les coefficients pour trouver les racines</h3><p>Justifie tes réponses, même si tu reconnais immédiatement les nombres.</p><div id="rr-questions" class="rr-question-grid"></div></div>
+    <p class="rr-back"><a href="#discriminant">← Revoir le discriminant</a><a href="#chap-canonique">Passer au sommet →</a></p>
   </section>
 
   <div class="chapter-intro" id="chap-canonique"><div class="chapter-index">ATELIER 02 · LE SOMMET</div><h2>Où atteint-elle son minimum ou son maximum ?</h2><p class="chapter-topic">Comprendre la forme canonique</p><p>Pourquoi écrire un carré ? Pour lire le sommet, l’extremum et les variations presque d’un seul coup d’œil.</p></div>
@@ -539,6 +595,7 @@
 </main>
 <footer><div class="container footer-grid"><span>Maths · Première spécialité · Atelier d'aide sur le second degré</span><span>Pas de note ni de transmission de réponses. <button type="button" class="reset" id="reset-progress">Effacer ma progression locale</button></span></div><div class="container footer-author">© 2026 Stéphane Campo — Tous droits réservés.</div></footer>
 <script src="exercices-complementaires.js"></script>
+<script src="relations-racines.js"></script>
 <script>
 (() => {
   'use strict';
